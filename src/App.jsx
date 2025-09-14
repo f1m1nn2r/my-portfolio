@@ -5,6 +5,7 @@ import Experience from "./pages/Experience";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import Behind from "./pages/Behind";
+import "./styles/index.css";
 
 export default function App() {
   return (

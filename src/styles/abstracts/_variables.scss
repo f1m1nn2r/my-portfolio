@@ -1,0 +1,38 @@
+// ------------------------------ 컬러
+$color: (
+  primary: #000,
+  point: #2d5aa0,
+  gray: #555555,
+  siverGray: #777777,
+  surface: #fafafa,
+  border: #dddddd,
+);
+// ------------------------------ 폰트
+$typography: (
+  display: (
+    font-size: 46px,
+    font-weight: 700,
+    line-height: 1.4,
+  ),
+  h1: (
+    font-size: 36px,
+    font-weight: 700,
+    line-height: 1.2,
+  ),
+  h2: (
+    font-size: 28px,
+    font-weight: 600,
+    line-height: 1.3,
+  ),
+  body: (
+    font-size: 20px,
+    font-weight: 500,
+    line-height: 1.5,
+    color: map-get($color, gray),
+  ),
+  caption: (
+    font-size: 18px,
+    font-weight: 500,
+    line-height: 1.3,
+  ),
+);

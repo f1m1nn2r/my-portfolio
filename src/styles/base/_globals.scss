@@ -1,0 +1,15 @@
+@use "../abstracts/functions" as fn;
+
+.component-layout {
+  height: 100vh;
+  padding: 70px 50px;
+  overflow: hidden;
+  @include fn.flex-column($justify: space-between);
+}
+
+.basic-inner {
+  width: 100%;
+  max-width: 1800px;
+  padding: 0 40px;
+  margin: 0 auto;
+}

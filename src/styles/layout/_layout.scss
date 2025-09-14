@@ -1,0 +1,40 @@
+@use "../abstracts/functions" as fn;
+
+.header {
+  &__brand {
+    padding-bottom: 30px;
+    border-bottom: 3px solid fn.color(primary);
+    margin-bottom: 70px;
+    @include fn.flex-between();
+  }
+  &__title {
+    @include fn.typography(h1);
+  }
+  &__description {
+    @include fn.typography(body);
+
+    span {
+      color: fn.color(primary);
+    }
+  }
+  &__nav {
+    &-list {
+      @include fn.flex-center($gap: 0 80px);
+    }
+    &-item {
+      flex: 1;
+      @include fn.typography(body);
+    }
+    &-link {
+      font-weight: 700;
+      display: block;
+      padding-bottom: 15px;
+      border-bottom: 3px solid fn.color(primary);
+
+      &--active {
+        color: fn.color(point);
+        border-bottom-color: fn.color(point);
+      }
+    }
+  }
+}
