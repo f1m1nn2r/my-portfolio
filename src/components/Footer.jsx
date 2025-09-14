@@ -19,7 +19,7 @@ export default function Footer() {
           </ul>
         </nav>
         <div className="footer__copyright">
-          <time datetime="2023/2025" className="footer__period">
+          <time dateTime="2023/2025" className="footer__period">
             2023-2025
           </time>
         </div>
