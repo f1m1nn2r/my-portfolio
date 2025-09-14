@@ -29,12 +29,41 @@
       font-weight: 700;
       display: block;
       padding-bottom: 15px;
-      border-bottom: 3px solid fn.color(primary);
+      border-bottom: 3px solid fn.color(gray);
 
       &--active {
         color: fn.color(point);
         border-bottom-color: fn.color(point);
       }
     }
+  }
+}
+.footer {
+  padding-top: 30px;
+  border-top: 3px solid fn.color(primary);
+  &__container {
+    @include fn.flex-between;
+  }
+  &__navigation {
+    width: 139%;
+  }
+  &__nav {
+    &-list {
+      @include fn.flex-between;
+    }
+    &-link {
+      @include fn.typography(body, fn.color(primary));
+
+      i {
+        vertical-align: text-top;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+  }
+  &__copyright {
+    width: 100%;
+    text-align: right;
+    @include fn.typography(body, fn.color(primary));
   }
 }

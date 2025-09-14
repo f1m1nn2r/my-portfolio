@@ -1,0 +1,51 @@
+@use "../abstracts/functions" as fn;
+
+.about {
+  &__container,
+  &__content {
+    display: flex;
+  }
+  &__container {
+    gap: 0 70px;
+  }
+  &__content {
+    gap: 0 50px;
+    @include fn.responsive-width(100%, $max: calc(100% - 624px));
+  }
+
+  &__header {
+    @include fn.responsive-width(100%, $max: 554px);
+  }
+  &__title {
+    @include fn.typography(display);
+  }
+  &__description {
+    margin-top: 30px;
+    @include fn.typography(body);
+  }
+  &__highlight {
+    color: fn.color(primary);
+  }
+  &__paragraph {
+    &:last-child {
+      margin-top: 30px;
+    }
+  }
+  &__section {
+    flex: 1;
+    &-title {
+      margin-bottom: 10px;
+      @include fn.typography(body-large);
+    }
+    &-text {
+      word-break: keep-all;
+      @include fn.typography(body);
+    }
+  }
+  &__spotify-link {
+    color: fn.color(point);
+    font-size: 18px;
+    border-bottom: 2px solid fn.color(point);
+    display: inline-block;
+  }
+}

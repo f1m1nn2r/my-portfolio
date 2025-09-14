@@ -3,5 +3,7 @@
 @use "./base/globals"; /* 전역 */
 @use "./layout/layout"; /* 레이아웃 */
 
+@use "./pages/about";
+
 // ------------------------------------------ //
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");

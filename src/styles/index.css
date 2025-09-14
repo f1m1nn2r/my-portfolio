@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* 레이아웃 */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -146,9 +145,8 @@ table {
 
 /* 리셋 */
 .component-layout {
-  height: 100vh;
+  min-height: 100vh;
   padding: 70px 50px;
-  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -170,6 +168,9 @@ table {
   max-width: 1800px;
   padding: 0 40px;
   margin: 0 auto;
+}
+.basic-inner.center-component {
+  padding: 130px 40px;
 }
 
 /* 전역 */
@@ -198,7 +199,7 @@ table {
   font-family: "Pretendard", sans-serif;
   font-size: 20px;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.7;
   color: #555555;
 }
 .header__description span {
@@ -223,16 +224,134 @@ table {
   font-family: "Pretendard", sans-serif;
   font-size: 20px;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.7;
   color: #555555;
 }
 .header__nav-link {
   font-weight: 700;
   display: block;
   padding-bottom: 15px;
-  border-bottom: 3px solid #000;
+  border-bottom: 3px solid #555555;
 }
 .header__nav-link--active {
   color: #2d5aa0;
   border-bottom-color: #2d5aa0;
+}
+
+.footer {
+  padding-top: 30px;
+  border-top: 3px solid #000;
+}
+.footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0;
+}
+.footer__navigation {
+  width: 139%;
+}
+.footer__nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0;
+}
+.footer__nav-link {
+  font-family: "Pretendard", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #000;
+}
+.footer__nav-link i {
+  vertical-align: text-top;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.footer__copyright {
+  width: 100%;
+  text-align: right;
+  font-family: "Pretendard", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #000;
+}
+
+/* 레이아웃 */
+.about__container, .about__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.about__container {
+  gap: 0 70px;
+}
+.about__content {
+  gap: 0 50px;
+  width: 100%;
+  max-width: calc(100% - 624px);
+}
+.about__header {
+  width: 100%;
+  max-width: 554px;
+}
+.about__title {
+  font-family: "Pretendard", sans-serif;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.about__description {
+  margin-top: 30px;
+  font-family: "Pretendard", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #555555;
+}
+.about__highlight {
+  color: #000;
+}
+.about__paragraph:last-child {
+  margin-top: 30px;
+}
+.about__section {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.about__section-title {
+  margin-bottom: 10px;
+  font-family: "Pretendard", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.about__section-text {
+  word-break: keep-all;
+  font-family: "Pretendard", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #555555;
+}
+.about__spotify-link {
+  color: #2d5aa0;
+  font-size: 18px;
+  border-bottom: 2px solid #2d5aa0;
+  display: inline-block;
 }

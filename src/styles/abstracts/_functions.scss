@@ -14,7 +14,9 @@
   line-height: map-get($props, line-height);
 
   $map-color: map-get($props, color);
-  @if $map-color {
+  @if $color {
+    color: $color;
+  } @else if $map-color {
     color: $map-color;
   }
 }
@@ -38,4 +40,26 @@
   align-items: $align;
   justify-content: $justify;
   gap: $gap;
+}
+
+// ------------------------------
+@mixin responsive-width($width, $max: null, $min: null) {
+  width: $width;
+
+  @if $max {
+    max-width: $max;
+  }
+  @if $min {
+    min-width: $min;
+  }
+}
+@mixin responsive-height($height, $max: null, $min: null) {
+  height: $height;
+
+  @if $max {
+    max-height: $max;
+  }
+  @if $min {
+    min-height: $min;
+  }
 }

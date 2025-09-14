@@ -7,7 +7,7 @@ export default function Layout() {
     <>
       <div className="component-layout">
         <Header />
-        <div className=" basic-inner">
+        <div className="center-component basic-inner">
           <Outlet />
         </div>
         <Footer />

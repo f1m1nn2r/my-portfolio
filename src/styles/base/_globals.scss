@@ -1,9 +1,8 @@
 @use "../abstracts/functions" as fn;
 
 .component-layout {
-  height: 100vh;
+  min-height: 100vh;
   padding: 70px 50px;
-  overflow: hidden;
   @include fn.flex-column($justify: space-between);
 }
 
@@ -12,4 +11,8 @@
   max-width: 1800px;
   padding: 0 40px;
   margin: 0 auto;
+
+  &.center-component {
+    padding: 130px 40px;
+  }
 }
