@@ -1,3 +1,7 @@
 export default function Experience() {
-  return <></>;
+  return (
+    <>
+      <div>Experience</div>
+    </>
+  );
 }
