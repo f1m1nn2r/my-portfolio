@@ -25,6 +25,7 @@
   }
   &__highlight {
     color: fn.color(primary);
+    font-weight: 700;
   }
   &__paragraph {
     &:last-child {

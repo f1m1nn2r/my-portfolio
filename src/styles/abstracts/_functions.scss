@@ -5,12 +5,12 @@
 }
 
 // ------------------------------ 사용: @include typography(display);
-@mixin typography($style, $color: null) {
+@mixin typography($style, $color: null, $weight: null) {
   $props: map-get(var.$typography, $style);
 
   font-family: "Pretendard", sans-serif;
   font-size: map-get($props, font-size);
-  font-weight: map-get($props, font-weight);
+  font-weight: if($weight, $weight, map-get($props, font-weight));
   line-height: map-get($props, line-height);
 
   $map-color: map-get($props, color);
