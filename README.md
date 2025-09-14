@@ -21,14 +21,15 @@ portfolio/
 │   └── favicon.ico                # 파비콘 만들 수 있으면
 ├── src/
 │   ├── components/                                           
+│   │   ├── Layout.jsx             # 전체 레이아웃 구조 설정(Outlet)
 │   │   ├── Header.jsx             # 헤더
 │   │   ├── Footer.jsx             # 풋터
 │   │   ├── Navigation.jsx         # 메뉴
-│   │   └── ProjectCard.jsx
 │   ├── pages/                                                
 │   │   ├── About.jsx              # 내 소개
 │   │   ├── Experience.jsx         # 경력
 │   │   └── Portfolio.jsx          # 작업물
+│   │   └── Contact.jsx            # 연락처
 │   │   └── Behind.jsx             # 비하인드, 어떻게 작업했는지
 │   ├── data/                                                 
 │   │   ├── projects.js            # 포트폴리오 데이터
