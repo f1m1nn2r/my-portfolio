@@ -16,41 +16,42 @@ If you are developing a production application, we recommend using TypeScript wi
 <!-- prettier-ignore-start -->
 portfolio/
 ├── public/
-│   ├── images/                    # 포트폴리오 이미지, 프로필 사진
-│   ├── resume.pdf                 # 이력서 파일
-│   └── favicon.ico                # 파비콘 만들 수 있으면
+│   ├── images/                          # 포트폴리오 이미지, 프로필 사진
+│   ├── resume.pdf                       # 이력서 파일
+│   └── favicon.ico                      # 파비콘 만들 수 있으면
 ├── src/
 │   ├── components/                                           
-│   │   ├── Layout.jsx             # 전체 레이아웃 구조 설정(Outlet)
-│   │   ├── Header.jsx             # 헤더
-│   │   ├── Footer.jsx             # 풋터
-│   │   ├── Navigation.jsx         # 메뉴
+│   │   ├── Layout.jsx                   # 전체 레이아웃 구조 설정(Outlet)
+│   │   ├── Header.jsx                   # 헤더
+│   │   ├── Footer.jsx                   # 풋터
+│   │   ├── Navigation.jsx               # 메뉴
 │   ├── pages/                                                
-│   │   ├── About.jsx              # 내 소개
-│   │   ├── Experience.jsx         # 경력
-│   │   └── Portfolio.jsx          # 작업물
-│   │   └── Contact.jsx            # 연락처
-│   │   └── Behind.jsx             # 비하인드, 어떻게 작업했는지
+│   │   ├── About.jsx                    # 내 소개
+│   │   ├── Experience.jsx               # 경력
+│   │   └── Portfolio.jsx                # 작업물
+│   │   └── Contact.jsx                  # 연락처
+│   │   └── Behind.jsx                   # 비하인드, 어떻게 작업했는지
 │   ├── data/                                                 
-│   │   ├── projects.js            # 포트폴리오 데이터
-│   │   ├── experience.js          # 경력 데이터
+│   │   ├── projects.js                  # 포트폴리오 데이터
+│   │   ├── experience.js                # 경력 데이터
 │   ├── styles/                                               
-│   │   ├── index.css              # 전체 css 임포트용
+│   │   ├── index.css                    # 전체 css 임포트용
 │   │   ├── abstracts/
-│   │   │   └── _mixins.scss       # 믹스인 모음
-│   │   │   └── _variables.scss    # 변수들(색상, 폰트 등)
-│   │   │   └── _reset.scss        # 페이지 리셋
+│   │   │   └── _mixins.scss             # 믹스인 모음
+│   │   │   └── _variables.scss          # 변수들(색상, 폰트 등)
+│   │   │   └── _reset.scss              # 페이지 리셋
 │   │   └── base/        
-│   │       └── _globals.scss      # 공통 클래스, 기본 스타일
+│   │       └── _globals.scss            # 공통 클래스, 기본 스타일
 │   │   └── layout/        
-│   │       └── _layout.scss       # 헤더/풋터
+│   │       └── _layout.scss             # 헤더/풋터
 │   │   └── pages/        
-│   │       └── _about.scss        # 내 소개
-│   │       └── _experience.scss   # 경력
-│   │       └── _portfolio.scss    # 포트폴리오
-│   │       └── _behind.scss       # 비하인드, 어떻게 작업했는지
-│   ├── hooks/                     # 커스텀 훅(필요시)
-│   ├── utils/                     # 유틸리티 함수
+│   │       └── _about.scss              # 내 소개
+│   │       └── _experience.scss         # 경력
+│   │       └── _portfolio.scss          # 포트폴리오
+│   │       └── _portfolioDetail.scss    # 포트폴리오 상세 내용
+│   │       └── _behind.scss             # 비하인드, 어떻게 작업했는지
+│   ├── hooks/                           # 커스텀 훅(필요시)
+│   ├── utils/                           # 유틸리티 함수(필요시)
 │   ├── App.js
 │   └── index.js
 └── package.json
@@ -85,3 +86,38 @@ portfolio/
 - perf -> 성능 개선
   - ex :
     perf(images): 이미지 최적화 적용
+
+## 포트폴리오 동작
+
+1. PortfolioNavigation.jsx:
+   projects.js 배열을 순회 -> 각 프로젝트의 id를 NavLink에 설정
+2. App.jsx:
+   클릭 시 /portfolio/all-services 같은 URL로 이동
+3. PortfolioDetail.jsx:
+   useParams()로 URL의 :projectId 부분을 가져옴 (projects.js의 id 값)
+4. projects.find()로 해당 id와 일치하는 프로젝트 객체를 찾음
+
+## 포트폴리오 내 라우팅 동작
+
+1. {}:
+   처음 빈 객체로 시작
+2. project:
+   { id: 'all-services', category: '📱 홈페이지', label: '한눈에 보기'.... }
+3. acc:
+   acc에는 project.category가 없으므로, acc[project.category] = [] 실행
+   -> {'📱 홈페이지': []}
+4. acc[project.category].push(project):
+   {'📱 홈페이지': [{id: 'all-services', ...}]}
+5. 이어서 두 번째 순회:
+   {'📱 홈페이지': [{id: 'all-services', ...}]} 값을 갖고 있는 상태이므로 if 조건문 건너 뜀
+   -> acc[project.category].push(project); 실행
+6. acc[project.category].push(project):
+   -> {'📱 홈페이지': [{id: 'all-services', ...}, {id: 'SuccessTips',}]}
+7. return acc:
+   -> acc로 전달되어 최종적으로 acc는 "하나"의 객체를 반환함
+8. Object.entries:
+   acc 객체는 map 메서드를 사용할 수 없어, Object.entries로 배열로 변환시킴
+   [
+   ["📱 홈페이지", [{ ... }, { ... }]],
+   ["💻 일반 랜딩", [{ ... }]]
+   ]
