@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section className="about">
+    <section className="about__page">
       <div className="about__container">
         <header className="about__header">
           <h2 className="about__title">
@@ -27,12 +27,12 @@ export default function About() {
               </span>
               하며, 실제로 그런 예외 상황들이 발견될 때 가장 보람을 느낍니다.
               <br />
-              이런 호기심 덕분에 기획서에 없던{" "}
+              이런 호기심 덕분에 기획서에 없던{' '}
               <span className="about__highlight">
                 예외 상황들을 미리 발견하고 대응
               </span>
               할 수 있었습니다. <br /> 코드로 결과물을 완성하는 것만큼이나, 그
-              과정에서{" "}
+              과정에서{' '}
               <span className="about__highlight">
                 새로운 문제를 발견하고 해결할 때 가장 큰 성취감
               </span>
@@ -41,19 +41,25 @@ export default function About() {
           </article>
 
           <article className="about__section">
+            <h3 className="about__section-title"># 기술 스택</h3>
+            <div className="about__section-text">
+              <p className="about__paragraph"></p>
+            </div>
+          </article>
+
+          <article className="about__section">
             <h3 className="about__section-title"># 취미</h3>
             <div className="about__section-text">
               <p className="about__paragraph">
                 업무 외에는 새로운 음악을 찾아 플레이리스트에 담는 것을
                 좋아합니다. [조용한 카페에서 듣기 좋은 노래]라는 제목의 플레이
-                리스트는 17명이 저장할 정도입니다. 같이 들어보실래요? 🎧{" "}
+                리스트는 17명이 저장할 정도입니다. 같이 들어보실래요? 🎧{' '}
                 <a
                   href="https://open.spotify.com/playlist/0g5eOKmRWAHkelxGs7663f?si=b9e999127990472e"
                   className="about__spotify-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Spotify 플레이리스트 듣기"
-                >
+                  aria-label="Spotify 플레이리스트 듣기">
                   👉 Spotify에서 듣기
                 </a>
               </p>

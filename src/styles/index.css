@@ -304,6 +304,16 @@ table {
 }
 
 /* 레이아웃 */
+.about__page {
+  width: 2293px;
+}
+.about .center-component {
+  overflow-x: auto;
+  margin: 0;
+}
+.about .header__navigation {
+  margin: 0;
+}
 .about__container, .about__content {
   display: -webkit-box;
   display: -ms-flexbox;

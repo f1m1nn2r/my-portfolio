@@ -1,6 +1,19 @@
-@use "../abstracts/functions" as fn;
+@use '../abstracts/functions' as fn;
 
 .about {
+  // 스크롤을 위함
+  &__page {
+    width: 2293px;
+  }
+  .center-component {
+    overflow-x: auto;
+    margin: 0;
+  }
+  .header__navigation {
+    margin: 0;
+  }
+  // END 스크롤을 위함
+
   &__container,
   &__content {
     display: flex;
