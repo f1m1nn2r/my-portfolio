@@ -1,11 +1,17 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import About from "./pages/About";
-import Experience from "./pages/Experience";
-import Portfolio from "./pages/Portfolio";
-import Contact from "./pages/Contact";
-import Behind from "./pages/Behind";
-import "./styles/index.css";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
+import Layout from './components/Layout';
+import About from './pages/About';
+import Experience from './pages/Experience';
+import Portfolio from './pages/Portfolio';
+import PortfolioDetail from './pages/PortfolioDetail';
+import Contact from './pages/Contact';
+import Behind from './pages/Behind';
+import './styles/index.css';
 
 export default function App() {
   return (
@@ -15,7 +21,10 @@ export default function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<About />} />
             <Route path="experience" element={<Experience />} />
-            <Route path="portfolio" element={<Portfolio />} />
+            <Route path="portfolio" element={<Portfolio />}>
+              <Route index element={<Navigate to="all-services" replace />} />
+              <Route path=":projectId" element={<PortfolioDetail />} />
+            </Route>
             <Route path="contact" element={<Contact />} />
             <Route path="behind" element={<Behind />} />
           </Route>
