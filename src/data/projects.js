@@ -14,9 +14,9 @@ export const projects = [
     ],
     techStack: {
       Frontend: 'JavaScript (ES6+), jQuery, HTML5, CSS3',
-      UIFramework: 'Slick Slider (이미지 슬라이드), 반응형 디자인',
-      DataHandling: 'JSON API 통신, 실시간 데이터 필터링',
-      CrossPlatform: '모바일/데스크톱 호환 UI 시스템',
+      'UI Framework': 'Slick Slider (이미지 슬라이드), 반응형 디자인',
+      'Data Handling': 'JSON API 통신, 실시간 데이터 필터링',
+      'Cross-Platform': '모바일/데스크톱 호환 UI 시스템',
     },
     techFeatures: [
       {
@@ -45,6 +45,8 @@ export const projects = [
     category: '📱 홈페이지',
     label: '홈런 중등',
     externalLink: 'https://mid.home-learn.co.kr/',
+    duration: '25.06 - 25.06 [2주 소요]',
+    role: '기여도 100%',
   },
   {
     id: 'newsroom',
