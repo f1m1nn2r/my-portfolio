@@ -17,7 +17,7 @@ export default function Footer() {
             </li>
             <li className="footer__nav-item">
               <Link
-                to="/work_experience.pdf"
+                to="/work-experience.pdf"
                 className="footer__nav-link"
                 target="_blank"
                 rel="noopener noreferrer">
