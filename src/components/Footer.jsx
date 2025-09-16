@@ -8,7 +8,7 @@ export default function Footer() {
           <ul className="footer__nav-list">
             <li className="footer__nav-item">
               <Link
-                to="/public/resume.pdf"
+                to="/resume.pdf"
                 className="footer__nav-link"
                 target="_blank"
                 rel="noopener noreferrer">
