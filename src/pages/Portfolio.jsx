@@ -4,7 +4,7 @@ import PortfolioNavigation from '../components/PortfolioNavigation';
 export default function Portfolio() {
   return (
     <>
-      <section className="portfolio">
+      <section className="portfolio__page">
         <div className="portfolio__container">
           <PortfolioNavigation />
           <div className="portfolio__content">
