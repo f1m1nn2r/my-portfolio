@@ -1,4 +1,4 @@
-import { experience } from "../data/experience";
+import { experience } from '../data/experience';
 
 export default function Experience() {
   return (
@@ -9,22 +9,21 @@ export default function Experience() {
         </header>
 
         <div className="experience__timeline">
-          {experience.map((expItem) => (
+          {experience.map(expItem => (
             <article className="experience__item" key={expItem.id}>
               <header className="experience__item-header">
                 <h2 className="experience__company">{expItem.company}</h2>
                 <div className="experience__position">{expItem.position}</div>
                 <time
                   className="experience__period"
-                  dateTime={expItem.period.start}
-                >
+                  dateTime={expItem.period.start}>
                   {expItem.period.display}
                 </time>
               </header>
               <ul className="experience__duties">
                 {expItem.duties.map((duty, index) => (
-                  <li className="experience__duty" key={index}>
-                    - {duty}
+                  <li className="experience__duty dash" key={index}>
+                    {duty}
                   </li>
                 ))}
               </ul>
