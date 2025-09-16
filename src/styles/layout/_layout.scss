@@ -1,4 +1,4 @@
-@use "../abstracts/functions" as fn;
+@use '../abstracts/functions' as fn;
 
 .header {
   &__brand {
@@ -42,14 +42,22 @@
   padding-top: 30px;
   border-top: 3px solid fn.color(primary);
   &__container {
-    @include fn.flex-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
   }
   &__navigation {
-    width: 139%;
+    display: contents;
+    @include fn.responsive-width(100%, $max: calc(100% - 106px));
   }
   &__nav {
     &-list {
-      @include fn.flex-between;
+      display: contents;
+    }
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     &-link {
       @include fn.typography(body, fn.color(primary));
@@ -62,8 +70,8 @@
     }
   }
   &__copyright {
-    width: 100%;
     text-align: right;
     @include fn.typography(body, fn.color(primary));
+    @include fn.flex-center;
   }
 }

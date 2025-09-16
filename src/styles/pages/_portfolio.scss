@@ -6,17 +6,17 @@
     gap: 0 70px;
   }
   &__content {
-    @include fn.responsive-width(100%, calc(100% - 116px));
+    @include fn.responsive-width(100%, calc(100% - 117px));
   }
 
   // 좌측 네비게이션
   &__nav {
     &-menu {
-      @include fn.responsive-width(100%, 116px);
+      @include fn.responsive-width(100%, 117px);
     }
 
     &-category {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
 
       &:last-child {
         margin-bottom: 0;
@@ -39,6 +39,7 @@
       color: fn.color(siverGray);
       &--active {
         color: fn.color(primary);
+        font-weight: 500;
       }
     }
   }
@@ -64,6 +65,16 @@
     }
     &__image {
       border: 1px solid fn.color(border);
+      display: block;
+      @include fn.responsive-width(100%, $max: 725px);
+
+      &-wrapper {
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
 
     &__section {
@@ -79,11 +90,14 @@
     &__section {
       margin-bottom: 30px;
 
+      &:last-child {
+        margin-bottom: 0;
+      }
       &-list {
         @include fn.typography(caption, $color: fn.color(gray), $weight: 400);
       }
       &-label {
-        margin-bottom: 7px;
+        margin-bottom: 10px;
         @include fn.typography(body, $color: fn.color(primary), $weight: 700);
       }
       &-category {
