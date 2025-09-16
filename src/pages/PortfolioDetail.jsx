@@ -19,8 +19,8 @@ export default function PortfolioDetail() {
     ? Object.entries(project.techStack).map(
         ([stackCategory, stackValue], index) => (
           <div key={index} className="detail__description-item dash">
-            <dt className="detail__section-category">{stackCategory}</dt>
-            <dd className="detail__section-value">: {stackValue}</dd>
+            <dt className="detail__section-category">{stackCategory}:</dt>
+            <dd className="detail__section-value">&nbsp;{stackValue}</dd>
           </div>
         ),
       )
@@ -30,6 +30,17 @@ export default function PortfolioDetail() {
     <div key={index} className="detail__description-item">
       <dt className="detail__section-category">{featuresCategory.name}</dt>
       <dd className="detail__section-value">{featuresCategory.description}</dd>
+    </div>
+  ));
+
+  const projectImages = project.gallery?.map((image, index) => (
+    <div className="detail__image-wrapper">
+      <img
+        src={`/images/projects/${image}`}
+        alt={`${project.title} 프로젝트 이미지`}
+        className="detail__image"
+        key={index}
+      />
     </div>
   ));
 
@@ -47,12 +58,19 @@ export default function PortfolioDetail() {
       </header>
       <div className="detail__content">
         <figure className="detail__figure">
-          <img
-            src={`/images/projects/${project.id}.png`}
-            alt={`${project.title} 프로젝트 이미지`}
-            className="detail__image"
-          />
-          <figcaption className="sr-only">{project.title}</figcaption>
+          {/* 기본 이미지 */}
+          {!project.gallery && (
+            <>
+              <img
+                src={`/images/projects/${project.id}.png`}
+                alt={`${project.title} 프로젝트 이미지`}
+                className="detail__image"
+              />
+              <figcaption className="sr-only">{project.title}</figcaption>
+            </>
+          )}
+          {/* 갤러리 값이 있을 경우 -> 여러 이미지 */}
+          {project.gallery && projectImages}
         </figure>
         <div className="detail__info">
           <section className="detail__section">
