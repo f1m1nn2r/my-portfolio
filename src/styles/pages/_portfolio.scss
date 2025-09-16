@@ -1,0 +1,57 @@
+@use '../abstracts/functions' as fn;
+
+.portfolio {
+  &__container {
+    display: flex;
+    gap: 0 70px;
+  }
+  &__content {
+    @include fn.responsive-width(100%, calc(100% - 116px));
+  }
+
+  // 좌측 네비게이션
+  &__nav {
+    &-menu {
+      @include fn.responsive-width(100%, 116px);
+    }
+
+    &-category {
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &-title {
+      margin-bottom: 10px;
+      @include fn.typography(caption, $weight: 700);
+    }
+    &-item {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &-link {
+      font-size: 14px;
+      font-weight: 400;
+      color: fn.color(siverGray);
+      &--active {
+        color: fn.color(primary);
+      }
+    }
+  }
+  // END 좌측 네비게이션
+
+  // 상세 콘텐츠
+  &__title {
+    margin-bottom: 10px;
+    @include fn.typography(h2);
+  }
+  &__link {
+    border-bottom: 1px solid;
+    @include fn.typography(caption, $color: fn.color(point));
+  }
+  // END 상세 콘텐츠
+}
