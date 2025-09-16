@@ -16,12 +16,14 @@ export default function PortfolioDetail() {
     )) || [];
 
   const techStackItem = project.techStack
-    ? Object.entries(project.techStack).map(([stackCategory, stackValue]) => (
-        <div key={stackCategory} className="detail__description-item dash">
-          <dt className="detail__section-category">{stackCategory}</dt>
-          <dd className="detail__section-value">: {stackValue}</dd>
-        </div>
-      ))
+    ? Object.entries(project.techStack).map(
+        ([stackCategory, stackValue], index) => (
+          <div key={index} className="detail__description-item dash">
+            <dt className="detail__section-category">{stackCategory}</dt>
+            <dd className="detail__section-value">: {stackValue}</dd>
+          </div>
+        ),
+      )
     : [];
 
   const featuresItem = project.techFeatures?.map((featuresCategory, index) => (
