@@ -9,54 +9,88 @@ export default function PortfolioDetail() {
 
   //-------------------------------------------------------
   const descriptionItem =
-    project.description?.map(descItem => <li>{descItem}</li>) || [];
+    project.description?.map((descItem, index) => (
+      <li key={index} className="detail__description-item dash">
+        {descItem}
+      </li>
+    )) || [];
 
   const techStackItem = project.techStack
     ? Object.entries(project.techStack).map(([stackCategory, stackValue]) => (
-        <li>
-          <span>{stackCategory}</span>
-          {stackValue}
-        </li>
+        <div key={stackCategory} className="detail__description-item dash">
+          <dt className="detail__section-category">{stackCategory}</dt>
+          <dd className="detail__section-value">: {stackValue}</dd>
+        </div>
       ))
     : [];
 
+  const featuresItem = project.techFeatures?.map((featuresCategory, index) => (
+    <div key={index} className="detail__description-item">
+      <dt className="detail__section-category">{featuresCategory.name}</dt>
+      <dd className="detail__section-value">{featuresCategory.description}</dd>
+    </div>
+  ));
+
   return (
     <>
-      <div className="portfolio__text">
-        <h1 className="portfolio__title">{project.title}</h1>
-        <Link
-          to={project.externalLink}
+      <header className="detail__header">
+        <h1 className="detail__title">{project.title}</h1>
+        <a
+          href={project.externalLink}
           target="_blank"
-          className="portfolio__link"
+          className="detail__link"
           rel="noopener noreferrer">
           {project.externalLink}
-        </Link>
-      </div>
-      <div className="portfolio__detail">
-        <div className="portfolio__image">
+        </a>
+      </header>
+      <div className="detail__content">
+        <figure className="detail__figure">
           <img
             src={`/images/projects/${project.id}.png`}
             alt={`${project.title} 프로젝트 이미지`}
+            className="detail__image"
           />
-        </div>
-        <div className="portfolio__description">
-          <article>
-            <h3># 소요 기간</h3>
-            <ul>
-              <li>{project.duration}</li>
-              <li>{project.role}</li>
-            </ul>
-          </article>
-          <article>
-            <h3># 주요 내용</h3>
-            <ul>{descriptionItem}</ul>
-          </article>
-          <article>
-            <h3># 주요 기술 스택</h3>
-            <ul>
-              <li>{techStackItem}</li>
-            </ul>
-          </article>
+          <figcaption className="sr-only">{project.title}</figcaption>
+        </figure>
+        <div className="detail__info">
+          <section className="detail__section">
+            <dl className="detail__section-list">
+              <div className="detail__description-item">
+                <dt className="detail__section-label"># 소요 기간</dt>
+                <dd className="detail__section-value">{project.duration}</dd>
+              </div>
+            </dl>
+          </section>
+          <section className="detail__section">
+            <dl className="detail__section-list">
+              <div className="detail__description-item">
+                <dt className="detail__section-label"># 기여도</dt>
+                <dd className="detail__section-value">{project.role}</dd>
+              </div>
+            </dl>
+          </section>
+          <section className="detail__section">
+            <dl className="detail__section-lst">
+              <div className="detail__description-item">
+                <dt className="detail__section-label"># 주요 내용</dt>
+                <dd className="detail__section-value">
+                  <ul className="detail__description-list">
+                    {descriptionItem}
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+          </section>
+          <section className="detail__section detail__section--tech-stack">
+            <h3 className="detail__section-label"># 주요 기술 스택</h3>
+            <dl className="detail__section-list">{techStackItem}</dl>
+          </section>
+          <section className="detail__section detail__section--tech-features">
+            <dl className="detail__section-list">
+              <dt className="detail__section-label"># 주요 기능</dt>
+              {featuresItem}
+            </dl>
+          </section>
         </div>
       </div>
     </>

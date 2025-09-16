@@ -23,18 +23,18 @@
       }
     }
     &-title {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       @include fn.typography(caption, $weight: 700);
     }
     &-item {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
 
       &:last-child {
         margin-bottom: 0;
       }
     }
     &-link {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 400;
       color: fn.color(siverGray);
       &--active {
@@ -45,13 +45,85 @@
   // END 좌측 네비게이션
 
   // 상세 콘텐츠
-  &__title {
-    margin-bottom: 10px;
-    @include fn.typography(h2);
-  }
-  &__link {
-    border-bottom: 1px solid;
-    @include fn.typography(caption, $color: fn.color(point));
+  .detail {
+    &__header {
+      margin-bottom: 50px;
+    }
+    &__title {
+      margin-bottom: 10px;
+      @include fn.typography(h2);
+    }
+    &__link {
+      border-bottom: 1px solid;
+      @include fn.typography(caption, $color: fn.color(point));
+    }
+    &__content {
+      display: flex;
+      gap: 0 70px;
+      align-items: flex-start;
+    }
+    &__image {
+      border: 1px solid fn.color(border);
+    }
+
+    &__section {
+      &-title {
+        margin-bottom: 6px;
+        @include fn.typography(body, $color: fn.color(primary), $weight: 700);
+      }
+    }
+    &__info {
+      position: sticky;
+      top: 20px;
+    }
+    &__section {
+      margin-bottom: 30px;
+
+      &-list {
+        @include fn.typography(caption, $color: fn.color(gray), $weight: 400);
+      }
+      &-label {
+        margin-bottom: 7px;
+        @include fn.typography(body, $color: fn.color(primary), $weight: 700);
+      }
+      &-category {
+        font-weight: 700;
+        color: fn.color(primary);
+      }
+      &-value {
+        @include fn.typography(caption, $color: fn.color(gray), $weight: 400);
+      }
+      &--tech {
+        &-stack {
+          .detail__section {
+            &-category,
+            &-value {
+              display: inline-block;
+            }
+          }
+        }
+        &-features {
+          .detail {
+            &__section-category {
+              color: fn.color(primary);
+              margin-bottom: 7px;
+            }
+            &__description-item {
+              margin-bottom: 30px;
+            }
+          }
+        }
+      }
+    }
+    &__description {
+      &-item {
+        margin-bottom: 5px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
   // END 상세 콘텐츠
 }
