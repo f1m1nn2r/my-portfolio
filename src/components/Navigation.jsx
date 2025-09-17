@@ -1,19 +1,17 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
-export default function Navigation() {
+export default function Navigation({ isFixed }) {
   const menuItems = [
-    { to: "/", label: "About me" },
-    { to: "/experience", label: "Experience" },
-    { to: "/portfolio", label: "Portfolio" },
-    { to: "/contact", label: "Contact" },
-    { to: "/behind", label: "Behind" },
+    { to: '/', label: 'About me' },
+    { to: '/portfolio', label: 'Portfolio' },
+    { to: '/behind', label: 'Behind' },
+    { to: '/contact', label: 'Contact' },
   ];
   return (
     <>
       <nav
-        className="header__navigation basic-inner"
-        aria-label="헤더 네비게이션"
-      >
+        className={`header__navigation basic-inner ${isFixed ? 'fixed' : ''}`}
+        aria-label="헤더 네비게이션">
         <ul className="header__nav-list">
           {menuItems.map((item, index) => {
             return (
@@ -22,10 +20,9 @@ export default function Navigation() {
                   to={item.to}
                   className={({ isActive }) =>
                     `header__nav-link ${
-                      isActive ? "header__nav-link--active" : ""
+                      isActive ? 'header__nav-link--active' : ''
                     }`
-                  }
-                >
+                  }>
                   {item.label}
                 </NavLink>
               </li>

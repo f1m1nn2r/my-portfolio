@@ -7,6 +7,16 @@
     margin-bottom: 70px;
     @include fn.flex-between();
   }
+  &__navigation {
+    &.fixed {
+      position: fixed;
+      top: 0;
+      background: fn.color(surface);
+      z-index: 99;
+      padding-top: 20px;
+    }
+  }
+
   &__title {
     @include fn.typography(h1);
   }
@@ -41,6 +51,7 @@
 .footer {
   padding-top: 30px;
   border-top: 3px solid fn.color(primary);
+
   &__container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
