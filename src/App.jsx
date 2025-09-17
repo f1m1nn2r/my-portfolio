@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 import Layout from './components/Layout';
 import About from './pages/About';
-import Experience from './pages/Experience';
 import Portfolio from './pages/Portfolio';
 import PortfolioDetail from './pages/PortfolioDetail';
 import Contact from './pages/Contact';
@@ -20,7 +19,6 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<About />} />
-            <Route path="experience" element={<Experience />} />
             <Route path="portfolio" element={<Portfolio />}>
               <Route index element={<Navigate to="all-services" replace />} />
               <Route path=":projectId" element={<PortfolioDetail />} />
