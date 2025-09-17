@@ -12,8 +12,10 @@ export default function About() {
             함께 고민하는 김민중입니다.
           </h2>
           <p className="about__description">
-            JSP와 React 기반 프론트엔드 개발 경험을 바탕으로
-            <br /> 교육 콘텐츠 웹 퍼블리싱을 담당하고 있습니다.
+            3년간 웹 에이전시, SI, 교육업을 거치며 개발 효율성과 사용자 경험
+            개선을 동시에 추구해온 UI/UX 개발자입니다. 퍼블리싱을 시작으로
+            현재는 복잡한 프론트엔드 로직 구현과 웹 성능 최적화에 집중하며,
+            실사용자의 니즈를 반영한 실용적인 개선을 추구하고 있습니다.
           </p>
         </header>
 
@@ -70,7 +72,7 @@ export default function About() {
               <div className="profile__tech-legend">
                 <div className="profile__legend-item">
                   <span className="profile__legend-dot profile__legend-dot--proficient"></span>
-                  <span>어느정도 사용</span>
+                  <span>익숙한</span>
                 </div>
                 <div className="profile__legend-item">
                   <span className="profile__legend-dot profile__legend-dot--familiar"></span>
