@@ -84,71 +84,71 @@ export default function About() {
 
               <div className="profile__tech-category">
                 <h4 className="profile__tech-category-title">프론트엔드</h4>
-                <div className="profile__tech-list">
-                  <span className="profile__tech-item profile__tech-item--proficient">
+                <ul className="profile__tech-list">
+                  <li className="profile__tech-item profile__tech-item--proficient">
                     JavaScript
-                  </span>
-                  <span className="profile__tech-item profile__tech-item--proficient">
+                  </li>
+                  <li className="profile__tech-item profile__tech-item--proficient">
                     jQuery
-                  </span>
-                  <span className="profile__tech-item profile__tech-item--familiar">
+                  </li>
+                  <li className="profile__tech-item profile__tech-item--familiar">
                     JSP
-                  </span>
-                  <span className="profile__tech-item profile__tech-item--familiar">
+                  </li>
+                  <li className="profile__tech-item profile__tech-item--familiar">
                     PHP
-                  </span>
-                  <span className="profile__tech-item profile__tech-item--experienced">
+                  </li>
+                  <li className="profile__tech-item profile__tech-item--experienced">
                     React
-                  </span>
-                  <span className="profile__tech-item profile__tech-item--experienced">
+                  </li>
+                  <li className="profile__tech-item profile__tech-item--experienced">
                     TypeScript
-                  </span>
-                </div>
+                  </li>
+                </ul>
               </div>
 
               <div className="profile__tech-category">
                 <h4 className="profile__tech-category-title">버전 컨트롤</h4>
-                <div className="profile__tech-list">
-                  <span className="profile__tech-item profile__tech-item--familiar">
+                <ul className="profile__tech-list">
+                  <li className="profile__tech-item profile__tech-item--familiar">
                     GitHub
-                  </span>
-                  <span className="profile__tech-item profile__tech-item--familiar">
+                  </li>
+                  <li className="profile__tech-item profile__tech-item--familiar">
                     GitLab
-                  </span>
-                  <span className="profile__tech-item profile__tech-item--familiar">
+                  </li>
+                  <li className="profile__tech-item profile__tech-item--familiar">
                     SourceTree
-                  </span>
-                </div>
+                  </li>
+                </ul>
               </div>
 
               <div className="profile__tech-category">
                 <h4 className="profile__tech-category-title">프로젝트 관리</h4>
-                <div className="profile__tech-list">
-                  <span className="profile__tech-item profile__tech-item--familiar">
+                <ul className="profile__tech-list">
+                  <li className="profile__tech-item profile__tech-item--familiar">
                     Trello
-                  </span>
-                  <span className="profile__tech-item profile__tech-item--familiar">
+                  </li>
+                  <li className="profile__tech-item profile__tech-item--familiar">
                     Notion
-                  </span>
-                  <span className="profile__tech-item profile__tech-item--experienced">
+                  </li>
+                  <li className="profile__tech-item profile__tech-item--experienced">
                     Jira
-                  </span>
-                </div>
+                  </li>
+                </ul>
               </div>
 
               <div className="profile__tech-category">
                 <h4 className="profile__tech-category-title">디자인 툴</h4>
-                <div className="profile__tech-list">
-                  <span className="profile__tech-item profile__tech-item--familiar">
+                <ul className="profile__tech-list">
+                  <li className="profile__tech-item profile__tech-item--familiar">
                     Figma
-                  </span>
-                  <span className="profile__tech-item profile__tech-item--familiar">
+                  </li>
+                  <li className="profile__tech-item profile__tech-item--familiar">
                     Photoshop
-                  </span>
-                  <span className="profile__tech-item profile__tech-item--experienced">
+                  </li>
+                  <li className="profile__tech-item profile__tech-item--experienced">
                     Zeplin
-                  </span>
-                </div>
+                  </li>
+                </ul>
               </div>
             </article>
 
