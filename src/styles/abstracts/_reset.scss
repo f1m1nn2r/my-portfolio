@@ -2,7 +2,9 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
+html {
+  background: #fafafa;
+}
 html,
 body,
 div,
@@ -89,7 +91,7 @@ video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   vertical-align: baseline;
   box-sizing: border-box;
 }
@@ -126,7 +128,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
