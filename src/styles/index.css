@@ -191,13 +191,10 @@ table {
 
 .dash {
   position: relative;
-  padding-left: 14px;
 }
 .dash::before {
   content: "-";
   margin-right: 5px;
-  position: absolute;
-  left: 0;
 }
 
 /* 전역 */
@@ -239,7 +236,7 @@ table {
 .header__description span {
   color: #000;
 }
-.header__nav-list {
+.header__menu-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -251,7 +248,7 @@ table {
           justify-content: center;
   gap: 0 80px;
 }
-.header__nav-item {
+.header__menu-item {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -261,15 +258,33 @@ table {
   line-height: 1.7;
   color: #555555;
 }
-.header__nav-link {
+.header__menu-link {
   font-weight: 700;
   display: block;
   padding-bottom: 15px;
   border-bottom: 3px solid #555555;
 }
-.header__nav-link--active {
+.header__menu-link--active {
   color: #2d5aa0;
   border-bottom-color: #2d5aa0;
+}
+.header__documents-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0 100px;
+}
+.header__documents-link {
+  font-family: "Pretendard", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #000;
+}
+.header__documents-link i {
+  vertical-align: text-top;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .footer {
@@ -277,58 +292,50 @@ table {
   border-top: 3px solid #000;
 }
 .footer__container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-}
-.footer__navigation {
-  display: contents;
-  width: 100%;
-  max-width: calc(100% - 106px);
-}
-.footer__nav-list {
-  display: contents;
-}
-.footer__nav-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0;
 }
-.footer__nav-link {
+.footer__title {
+  margin-bottom: 10px;
   font-family: "Pretendard", sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.7;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
   color: #000;
 }
-.footer__nav-link i {
-  vertical-align: text-top;
+.footer__contact-item {
+  margin-bottom: 10px;
+  font-family: "Pretendard", sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #777777;
+}
+.footer__contact-item:last-child {
+  margin-bottom: 0;
+}
+.footer__contact-link {
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+.footer__contact-link:hover {
+  color: #000;
 }
 .footer__copyright {
   text-align: right;
   font-family: "Pretendard", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
-  line-height: 1.7;
+  line-height: 1.3;
   color: #000;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 0;
 }
 
 /* 레이아웃 */
@@ -363,7 +370,7 @@ table {
 }
 .about__header {
   position: sticky;
-  top: 38%;
+  top: 35%;
   width: 100%;
   max-width: 474px;
 }
@@ -375,6 +382,7 @@ table {
 }
 .about__description {
   margin-top: 30px;
+  word-break: keep-all;
   font-family: "Pretendard", sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -388,6 +396,7 @@ table {
   display: flex;
   gap: 0 30px;
   padding-bottom: 40px;
+  text-align: center;
   border-bottom: 2px solid #000;
 }
 .experience__item {
@@ -424,6 +433,7 @@ table {
 }
 .experience__task {
   word-break: keep-all;
+  letter-spacing: -0.6px;
   font-family: "Pretendard", sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -454,7 +464,7 @@ table {
   word-break: keep-all;
   font-family: "Pretendard", sans-serif;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.7;
   color: #555555;
 }

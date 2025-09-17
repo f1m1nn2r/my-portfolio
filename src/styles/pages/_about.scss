@@ -16,7 +16,7 @@
 
   &__header {
     position: sticky;
-    top: 38%;
+    top: 35%;
     @include fn.responsive-width(100%, $max: 474px);
   }
   &__title {
@@ -24,6 +24,7 @@
   }
   &__description {
     margin-top: 30px;
+    word-break: keep-all;
     @include fn.typography(body);
   }
 }
@@ -32,6 +33,7 @@
   display: flex;
   gap: 0 30px;
   padding-bottom: 40px;
+  text-align: center;
   border-bottom: 2px solid fn.color(primary);
 
   &__item {
@@ -61,6 +63,7 @@
 
   &__task {
     word-break: keep-all;
+    letter-spacing: -0.6px;
     @include fn.typography(
       caption,
       $color: fn.color(primary),
@@ -86,7 +89,7 @@
     }
     &-text {
       word-break: keep-all;
-      @include fn.typography(body);
+      @include fn.typography(body, $weight: 400);
     }
   }
   &__spotify-link {

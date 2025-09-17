@@ -31,11 +31,8 @@
 
 .dash {
   position: relative;
-  padding-left: 14px;
   &::before {
     content: '-';
     margin-right: 5px;
-    position: absolute;
-    left: 0;
   }
 }

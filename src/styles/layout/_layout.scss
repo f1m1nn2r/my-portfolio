@@ -27,7 +27,7 @@
       color: fn.color(primary);
     }
   }
-  &__nav {
+  &__menu {
     &-list {
       @include fn.flex-center($gap: 0 80px);
     }
@@ -47,28 +47,11 @@
       }
     }
   }
-}
-.footer {
-  padding-top: 30px;
-  border-top: 3px solid fn.color(primary);
 
-  &__container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-  }
-  &__navigation {
-    display: contents;
-    @include fn.responsive-width(100%, $max: calc(100% - 106px));
-  }
-  &__nav {
+  &__documents {
     &-list {
-      display: contents;
-    }
-    &-item {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      gap: 0 100px;
     }
     &-link {
       @include fn.typography(body, fn.color(primary));
@@ -80,9 +63,39 @@
       }
     }
   }
+}
+.footer {
+  padding-top: 30px;
+  border-top: 3px solid fn.color(primary);
+
+  &__container {
+    @include fn.flex-between($align: flex-end);
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    @include fn.typography(body-large, fn.color(primary), $weight: 600);
+  }
+  &__contact {
+    &-item {
+      margin-bottom: 10px;
+
+      @include fn.typography(caption, fn.color(siverGray), $size: 16px);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &-link {
+      transition: color 0.2s ease;
+      &:hover {
+        color: fn.color(primary);
+      }
+    }
+  }
+
   &__copyright {
     text-align: right;
-    @include fn.typography(body, fn.color(primary));
-    @include fn.flex-center;
+    @include fn.typography(caption, fn.color(primary));
   }
 }
