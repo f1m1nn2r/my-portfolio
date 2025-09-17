@@ -8,6 +8,13 @@ export default function PortfolioDetail() {
   if (!project) return <div>프로젝트를 찾을 수 없습니다.</div>;
 
   //-------------------------------------------------------
+  const workScopeItem =
+    project.workScope?.map((workScopeList, index) => (
+      <li key={index} className="detail__description-item dash">
+        {workScopeList}
+      </li>
+    )) || [];
+
   const descriptionItem =
     project.description?.map((descItem, index) => (
       <li key={index} className="detail__description-item dash">
@@ -89,18 +96,16 @@ export default function PortfolioDetail() {
               </div>
             </dl>
           </section>
-          <section className="detail__section">
-            <dl className="detail__section-lst">
-              <div className="detail__description-item">
-                <dt className="detail__section-label"># 주요 내용</dt>
-                <dd className="detail__section-value">
-                  <ul className="detail__description-list">
-                    {descriptionItem}
-                  </ul>
-                </dd>
-              </div>
-            </dl>
-          </section>
+          {project.workScope && (
+            <section className="detail__section">
+              <dl className="detail__section-list">
+                <div className="detail__description-item">
+                  <dt className="detail__section-label"># 담당 업무</dt>
+                  <ul className="detail__section-value">{workScopeItem}</ul>
+                </div>
+              </dl>
+            </section>
+          )}
           <section className="detail__section detail__section--tech-stack">
             <h3 className="detail__section-label"># 주요 기술 스택</h3>
             <dl className="detail__section-list">{techStackItem}</dl>
