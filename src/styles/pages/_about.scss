@@ -1,52 +1,85 @@
 @use '../abstracts/functions' as fn;
 
 .about {
-  // 스크롤을 위함
-  &__page {
-    width: 2293px;
-  }
-  .center-component {
-    overflow-x: auto;
-    margin: 0;
-  }
-  .header__navigation {
-    margin: 0;
-  }
-  // END 스크롤을 위함
-
   &__container,
   &__content {
     display: flex;
   }
   &__container {
     gap: 0 70px;
+    align-items: flex-start;
   }
   &__content {
-    gap: 0 50px;
-    @include fn.responsive-width(100%, $max: calc(100% - 624px));
+    @include fn.flex-column($gap: 0 50px);
+    @include fn.responsive-width(100%, $max: calc(100% - 544px));
   }
 
   &__header {
-    @include fn.responsive-width(100%, $max: 554px);
+    position: sticky;
+    top: 38%;
+    @include fn.responsive-width(100%, $max: 474px);
   }
   &__title {
-    @include fn.typography(display);
+    @include fn.typography(display, $size: 42px);
   }
   &__description {
     margin-top: 30px;
     @include fn.typography(body);
   }
-  &__highlight {
-    color: fn.color(primary);
-    font-weight: 700;
-  }
-  &__paragraph {
-    &:last-child {
-      margin-top: 30px;
+}
+
+.experience {
+  display: flex;
+  gap: 0 30px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid fn.color(primary);
+
+  &__item {
+    flex: 1;
+    &-header {
+      text-align: center;
+      margin-bottom: 40px;
     }
   }
+
+  &__header {
+    margin-bottom: 20px;
+  }
+
+  &__timeline {
+    display: flex;
+  }
+  &__company,
+  &__position {
+    @include fn.typography(h2);
+  }
+  &__period {
+    margin-top: 5px;
+    display: inline-block;
+    @include fn.typography(caption, $color: fn.color(siverGray), $weight: 500);
+  }
+
+  &__task {
+    word-break: keep-all;
+    @include fn.typography(
+      caption,
+      $color: fn.color(primary),
+      $weight: 400,
+      $line-height: 1.7
+    );
+  }
+}
+
+.profile {
+  padding-top: 50px;
+
   &__section {
+    margin-bottom: 60px;
     flex: 1;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
     &-title {
       margin-bottom: 10px;
       @include fn.typography(body-large);
@@ -61,5 +94,85 @@
     font-size: 18px;
     border-bottom: 2px solid fn.color(point);
     display: inline-block;
+  }
+  &__highlight {
+    color: fn.color(primary);
+    font-weight: 700;
+  }
+  &__paragraph {
+    &:last-child {
+      margin-top: 30px;
+    }
+  }
+
+  &__tech {
+    &-legend {
+      display: flex;
+      gap: 0 20px;
+      margin-bottom: 30px;
+    }
+    &-category {
+      margin-bottom: 30px;
+
+      &-title {
+        margin-bottom: 10px;
+        padding-left: 15px;
+        position: relative;
+        @include fn.typography(body, $color: fn.color(primary));
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 3px;
+          height: 20px;
+          background: #2d5aa0;
+          transform: translateY(-50%);
+        }
+      }
+    }
+    &-list {
+      display: flex;
+      gap: 0 10px;
+    }
+    &-item {
+      display: inline-block;
+      padding: 0.5rem 1.3rem;
+      border-radius: 20px;
+      @include fn.typography(caption);
+
+      &--proficient {
+        background: rgba((fn.color(point)), 0.3);
+      }
+      &--familiar {
+        background: rgba((fn.color(point)), 0.6);
+      }
+      &--experienced {
+        background: fn.color(point);
+        color: fn.color(surface);
+      }
+    }
+  }
+  &__legend {
+    &-item {
+      @include fn.typography(caption);
+    }
+    &-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin-right: 8px;
+      border-radius: 50%;
+      &--proficient {
+        background: rgba((fn.color(point)), 0.3);
+      }
+      &--familiar {
+        background: rgba((fn.color(point)), 0.6);
+      }
+      &--experienced {
+        background: fn.color(point);
+      }
+    }
   }
 }
