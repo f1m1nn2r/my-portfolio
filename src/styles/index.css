@@ -92,8 +92,7 @@ video {
   font: inherit;
   font-family: "Pretendard";
   vertical-align: baseline;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -147,19 +146,10 @@ table {
 .component-layout {
   min-height: 100vh;
   padding: 70px 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
   gap: 0;
 }
 
@@ -195,15 +185,9 @@ table {
   padding-bottom: 30px;
   border-bottom: 3px solid #000;
   margin-bottom: 70px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   gap: 0;
 }
 .header__title {
@@ -223,21 +207,13 @@ table {
   color: #000;
 }
 .header__nav-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   gap: 0 80px;
 }
 .header__nav-item {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   font-family: "Pretendard", sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -273,15 +249,9 @@ table {
   display: contents;
 }
 .footer__nav-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 .footer__nav-link {
   font-family: "Pretendard", sans-serif;
@@ -302,15 +272,9 @@ table {
   font-weight: 500;
   line-height: 1.7;
   color: #000;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   gap: 0;
 }
 
@@ -326,8 +290,6 @@ table {
   margin: 0;
 }
 .about__container, .about__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 .about__container {
@@ -364,9 +326,7 @@ table {
   margin-top: 30px;
 }
 .about__section {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 .about__section-title {
   margin-bottom: 10px;
@@ -391,17 +351,13 @@ table {
 }
 
 .experience__item {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 .experience__item-header {
   text-align: center;
   margin-bottom: 40px;
 }
 .experience__timeline {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 .experience__company, .experience__position {
@@ -429,14 +385,12 @@ table {
 }
 
 .portfolio__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 0 70px;
 }
 .portfolio__content {
   width: 100%;
-  max-width: calc(100% - 117px);
+  max-width: calc(100% - 187px);
 }
 .portfolio__nav-menu {
   width: 100%;
@@ -489,19 +443,18 @@ table {
   color: #2d5aa0;
 }
 .portfolio .detail__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 0 70px;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
+}
+.portfolio .detail__figure {
+  width: 100%;
+  max-width: calc(100% - 670px);
 }
 .portfolio .detail__image {
   border: 1px solid #dddddd;
   display: block;
   width: 100%;
-  max-width: 725px;
 }
 .portfolio .detail__image-wrapper {
   margin-bottom: 30px;
@@ -520,6 +473,8 @@ table {
 .portfolio .detail__info {
   position: sticky;
   top: 20px;
+  width: 100%;
+  max-width: 740px;
 }
 .portfolio .detail__section {
   margin-bottom: 30px;
@@ -547,6 +502,7 @@ table {
   color: #000;
 }
 .portfolio .detail__section-value {
+  word-break: keep-all;
   font-family: "Pretendard", sans-serif;
   font-size: 18px;
   font-weight: 400;

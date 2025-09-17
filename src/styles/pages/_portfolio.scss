@@ -6,13 +6,13 @@
     gap: 0 70px;
   }
   &__content {
-    @include fn.responsive-width(100%, calc(100% - 117px));
+    @include fn.responsive-width(100%, $max: calc(100% - 187px));
   }
 
   // 좌측 네비게이션
   &__nav {
     &-menu {
-      @include fn.responsive-width(100%, 117px);
+      @include fn.responsive-width(100%, $max: 117px);
     }
 
     &-category {
@@ -63,10 +63,13 @@
       gap: 0 70px;
       align-items: flex-start;
     }
+    &__figure {
+      @include fn.responsive-width(100%, $max: calc(100% - 670px));
+    }
     &__image {
       border: 1px solid fn.color(border);
       display: block;
-      @include fn.responsive-width(100%, $max: 725px);
+      width: 100%;
 
       &-wrapper {
         margin-bottom: 30px;
@@ -86,6 +89,7 @@
     &__info {
       position: sticky;
       top: 20px;
+      @include fn.responsive-width(100%, $max: 740px);
     }
     &__section {
       margin-bottom: 30px;
@@ -105,6 +109,7 @@
         color: fn.color(primary);
       }
       &-value {
+        word-break: keep-all;
         @include fn.typography(caption, $color: fn.color(gray), $weight: 400);
       }
       &--tech {
