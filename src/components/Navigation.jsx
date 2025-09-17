@@ -12,15 +12,15 @@ export default function Navigation({ isFixed }) {
       <nav
         className={`header__navigation basic-inner ${isFixed ? 'fixed' : ''}`}
         aria-label="헤더 네비게이션">
-        <ul className="header__nav-list">
+        <ul className="header__menu-list">
           {menuItems.map((item, index) => {
             return (
-              <li className="header__nav-item" key={index}>
+              <li className="header__menu-item" key={index}>
                 <NavLink
                   to={item.to}
                   className={({ isActive }) =>
-                    `header__nav-link ${
-                      isActive ? 'header__nav-link--active' : ''
+                    `header__menu-link ${
+                      isActive ? 'header__menu-link--active' : ''
                     }`
                   }>
                   {item.label}
