@@ -193,6 +193,11 @@
         background: rgba(fn.color(point), 0.4);
         border-radius: 50%;
       }
+      &-active {
+        &::before {
+          background: fn.color(point);
+        }
+      }
     }
     &__label {
       margin-bottom: 8px;
@@ -228,13 +233,14 @@
   &__detail {
     &-text {
       display: flex;
+      gap: 0 40px;
     }
     &-title {
       @include fn.typography(h1);
     }
     &-subtitle {
-      margin: 5px 0 15px;
-      @include fn.typography(body-large, $weight: 400, $color: fn.color(gray));
+      margin: 5px 0 12px;
+      @include fn.typography(body, $weight: 300, $color: fn.color(gray));
     }
     &-link {
       @include fn.typography(body, $color: fn.color(point));
@@ -244,6 +250,16 @@
         margin-left: 5px;
       }
     }
+    &-desc {
+      margin-top: 35px;
+      word-break: keep-all;
+      @include fn.typography(
+        caption,
+        $weight: 400,
+        $color: fn.color(primary),
+        $line-height: 1.5
+      );
+    }
     &-meta {
       background: fn.color(lightSurface);
       border: 1px solid fn.color(point);
@@ -252,12 +268,38 @@
       @include fn.responsive-width(100%, $max: 403px);
 
       h3 {
-        @include fn.typography(body-large, $color: fn.color(primary));
+        @include fn.typography(body, $color: fn.color(primary), $weight: 600);
       }
     }
     &-contribution {
+      margin-bottom: 25px;
+    }
+    &-contribution {
       &-role {
-        @include fn.typography(body, $color: fn.color(gray));
+        margin-top: 5px;
+        @include fn.typography(caption, $color: fn.color(gray));
+      }
+    }
+
+    &-section {
+      &-title {
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        border-bottom: 2px solid fn.color(point);
+        @include fn.typography(body-large);
+      }
+    }
+    &-achievements {
+      margin: 70px 0;
+    }
+    &-achievement {
+      &-item {
+        margin-bottom: 6px;
+        @include fn.typography(caption, $weight: 400);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
   }
