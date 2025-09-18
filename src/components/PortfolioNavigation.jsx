@@ -2,38 +2,32 @@ import { NavLink } from 'react-router-dom';
 import { projects } from '../data/projects';
 
 export default function PortfolioNavigation() {
-  const category = projects.reduce((acc, project) => {
-    if (!acc[project.category]) acc[project.category] = [];
-    acc[project.category].push(project);
-    return acc;
-  }, {});
-
   return (
-    <aside className="portfolio__nav-menu">
-      <div className="portfolio__nav-inner">
-        <nav className="portfolio__nav">
-          {Object.entries(category).map(([category, projectList]) => (
-            <section className="portfolio__nav-category" key={projectList}>
-              <h3 className="portfolio__nav-title">{category}</h3>
-              <ul className="portfolio__nav-list">
-                {projectList.map(project => (
-                  <li className="portfolio__nav-item" key={project.id}>
-                    <NavLink
-                      className={({ isActive }) =>
-                        `portfolio__nav-link ${
-                          isActive ? 'portfolio__nav-link--active' : ''
-                        }`
-                      }
-                      to={`/portfolio/${project.id}`}>
-                      {project.label}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            </section>
+    <aside
+      className="project-selection"
+      role="complementary"
+      aria-label="프로젝트 네비게이션">
+      <header className="project-selection__header">
+        <h2 className="project-selection__title">프로젝트 선택</h2>
+      </header>
+      <nav className="project-selection__content">
+        <ul className="project-selection__list" role="list">
+          {projects.map((project, index) => (
+            <li className="project-selection__item" key={index}>
+              <NavLink
+                className={({ isActive }) =>
+                  `project-selection__link ${
+                    isActive ? 'project-selection__link-active' : ''
+                  }`
+                }
+                to={`/portfolio/${project.id}`}>
+                <h3 className="project-selection__label">{project.label}</h3>
+                <p className="project-selection__desc">{project.preview}</p>
+              </NavLink>
+            </li>
           ))}
-        </nav>
-      </div>
+        </ul>
+      </nav>
     </aside>
   );
 }
