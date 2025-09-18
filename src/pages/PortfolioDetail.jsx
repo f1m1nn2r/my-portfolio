@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom';
 import { projects } from '../data/projects';
-// import { techSkills } from '../data/techSkills';
 
 export default function PortfolioDetail() {
   const { projectId } = useParams();
@@ -147,7 +146,6 @@ export default function PortfolioDetail() {
             <div className="portfolio__detail-tech">
               <h3 className="portfolio__detail-tech-title">🛠️ 사용 기술</h3>
               <ul className="portfolio__detail-tech-list tag-group">
-                {techSkils.map(() => {})}
                 <li className="portfolio__detail-tech-item tag-group__item">
                   JavaScript
                 </li>
@@ -172,16 +170,9 @@ export default function PortfolioDetail() {
           <section className="portfolio__detail-achievements">
             <h2 className="portfolio__detail-section-title">⭐ 주요 성과</h2>
             <ul className="portfolio__detail-achievement-list">
-              <li className="portfolio__detail-achievement-item">
-                1. 서로 다른 데이터 소스(전체 DB, 맞춤형 데이터, 인기 TOP5) 통합
-              </li>
-              <li className="portfolio__detail-achievement-item">
-                2. 백엔드 개발자와 협업하여 데이터 스키마부터 프론트엔드
-                로직까지 최적화
-              </li>
-              <li className="portfolio__detail-achievement-item">
-                3. 일관된 상세 팝업 인터페이스 설계 및 구현
-              </li>
+              {project.results.map((result, index) => (
+                <li className="portfolio__detail-achievement-item">{result}</li>
+              ))}
             </ul>
           </section>
           <section className="portfolio__detail-features">
