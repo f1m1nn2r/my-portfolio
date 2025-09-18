@@ -135,27 +135,6 @@
         }
       }
     }
-    &-list {
-      display: flex;
-      gap: 0 10px;
-    }
-    &-item {
-      display: inline-block;
-      padding: 0.5rem 1.3rem;
-      border-radius: 20px;
-      @include fn.typography(caption);
-
-      &--proficient {
-        background: rgba((fn.color(point)), 0.3);
-      }
-      &--familiar {
-        background: rgba((fn.color(point)), 0.6);
-      }
-      &--experienced {
-        background: fn.color(point);
-        color: fn.color(surface);
-      }
-    }
   }
   &__legend {
     &-item {
