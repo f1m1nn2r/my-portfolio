@@ -1,4 +1,5 @@
 import { experience } from '../data/experience';
+import { techSkills } from '../data/techSkills';
 
 export default function About() {
   return (
@@ -84,74 +85,22 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="profile__tech-category">
-                <h4 className="profile__tech-category-title">프론트엔드</h4>
-                <ul className="profile__tech-list">
-                  <li className="profile__tech-item profile__tech-item--proficient">
-                    JavaScript
-                  </li>
-                  <li className="profile__tech-item profile__tech-item--proficient">
-                    jQuery
-                  </li>
-                  <li className="profile__tech-item profile__tech-item--familiar">
-                    JSP
-                  </li>
-                  <li className="profile__tech-item profile__tech-item--familiar">
-                    PHP
-                  </li>
-                  <li className="profile__tech-item profile__tech-item--experienced">
-                    React
-                  </li>
-                  <li className="profile__tech-item profile__tech-item--experienced">
-                    TypeScript
-                  </li>
-                </ul>
-              </div>
-
-              <div className="profile__tech-category">
-                <h4 className="profile__tech-category-title">버전 컨트롤</h4>
-                <ul className="profile__tech-list">
-                  <li className="profile__tech-item profile__tech-item--familiar">
-                    GitHub
-                  </li>
-                  <li className="profile__tech-item profile__tech-item--familiar">
-                    GitLab
-                  </li>
-                  <li className="profile__tech-item profile__tech-item--familiar">
-                    SourceTree
-                  </li>
-                </ul>
-              </div>
-
-              <div className="profile__tech-category">
-                <h4 className="profile__tech-category-title">프로젝트 관리</h4>
-                <ul className="profile__tech-list">
-                  <li className="profile__tech-item profile__tech-item--familiar">
-                    Trello
-                  </li>
-                  <li className="profile__tech-item profile__tech-item--familiar">
-                    Notion
-                  </li>
-                  <li className="profile__tech-item profile__tech-item--experienced">
-                    Jira
-                  </li>
-                </ul>
-              </div>
-
-              <div className="profile__tech-category">
-                <h4 className="profile__tech-category-title">디자인 툴</h4>
-                <ul className="profile__tech-list">
-                  <li className="profile__tech-item profile__tech-item--familiar">
-                    Figma
-                  </li>
-                  <li className="profile__tech-item profile__tech-item--familiar">
-                    Photoshop
-                  </li>
-                  <li className="profile__tech-item profile__tech-item--experienced">
-                    Zeplin
-                  </li>
-                </ul>
-              </div>
+              {techSkills.map((techItem, index) => (
+                <div className="profile__tech-category" key={index}>
+                  <h4 className="profile__tech-category-title">
+                    {techItem.category}
+                  </h4>
+                  <ul className="profile__tech-list tag-group">
+                    {techItem.skils.map((skilsItem, index) => (
+                      <li
+                        className={`profile__tech-item tag-group__item tag-group__item--${skilsItem.level}`}
+                        key={index}>
+                        {skilsItem.name}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </article>
 
             <article className="profile__section">
