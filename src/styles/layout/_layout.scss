@@ -11,6 +11,8 @@
     &.fixed {
       position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       background: fn.color(surface);
       z-index: 99;
       padding-top: 20px;
