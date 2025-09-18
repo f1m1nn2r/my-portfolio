@@ -540,6 +540,11 @@ export const projects = [
     role: '전체 작업 100%',
     link: 'https://www.home-learn.co.kr/observe/all-services.do',
     gallery: ['all-services.png', 'all-services-popup.png'],
+    results: [
+      '1. 서로 다른 데이터 소스(전체 DB, 맞춤형 데이터, 인기 TOP5) 통합',
+      '2. 백엔드 개발자와 협업하여 데이터 스키마부터 프론트엔드 로직까지 최적화',
+      '3. 일관된 상세 팝업 인터페이스 설계 및 구현',
+    ],
   },
   {
     id: 'mid',
