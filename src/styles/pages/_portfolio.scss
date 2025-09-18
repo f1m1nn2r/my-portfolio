@@ -3,9 +3,12 @@
 .portfolio {
   &__container {
     display: flex;
-    gap: 0 70px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 39px rgba(fn.color(point), 0.15);
   }
   &__content {
+    padding: 100px;
     @include fn.responsive-width(100%, $max: calc(100% - 187px));
   }
 
@@ -145,4 +148,117 @@
     }
   }
   // END 상세 콘텐츠
+}
+
+.project {
+  &-selection {
+    @include fn.responsive-width(100%, $max: 279px);
+    &__header {
+      padding: 40px 50px;
+      background: fn.color(point);
+      text-align: center;
+    }
+    &__title {
+      @include fn.typography(
+        body-large,
+        $color: fn.color(surface),
+        $weight: 600
+      );
+    }
+    &__content {
+      background: #f4f6f9;
+    }
+    &__list {
+      padding: 0 20px;
+    }
+    &__item {
+      border-bottom: 2px solid rgba(fn.color(point), 0.6);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    &__link {
+      padding: 35px 0 35px 22px;
+      display: block;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 45px;
+        left: 0;
+        width: 12px;
+        height: 12px;
+        background: rgba(fn.color(point), 0.4);
+        border-radius: 50%;
+      }
+    }
+    &__label {
+      margin-bottom: 8px;
+      @include fn.typography(
+        body-large,
+        $color: rgba(fn.color(primary), 0.5),
+        $weight: 500
+      );
+    }
+    &__desc {
+      @include fn.typography(
+        caption,
+        $color: rgba(fn.color(siverGray), 0.5),
+        $weight: 400
+      );
+    }
+    &__link {
+      &-active {
+        .project-selection__label {
+          color: fn.color(point);
+          font-weight: 700;
+        }
+        .project-selection__desc {
+          color: fn.color(primary);
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.portfolio {
+  &__detail {
+    &-text {
+      display: flex;
+    }
+    &-title {
+      @include fn.typography(h1);
+    }
+    &-subtitle {
+      margin: 5px 0 15px;
+      @include fn.typography(body-large, $weight: 400, $color: fn.color(gray));
+    }
+    &-link {
+      @include fn.typography(body, $color: fn.color(point));
+
+      &-text {
+        border-bottom: 1px solid fn.color(point);
+        margin-left: 5px;
+      }
+    }
+    &-meta {
+      background: fn.color(lightSurface);
+      border: 1px solid fn.color(point);
+      border-radius: 10px;
+      padding: 35px 25px;
+      @include fn.responsive-width(100%, $max: 403px);
+
+      h3 {
+        @include fn.typography(body-large, $color: fn.color(primary));
+      }
+    }
+    &-contribution {
+      &-role {
+        @include fn.typography(body, $color: fn.color(gray));
+      }
+    }
+  }
 }
