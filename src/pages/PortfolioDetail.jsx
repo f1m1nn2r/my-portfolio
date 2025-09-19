@@ -170,9 +170,12 @@ export default function PortfolioDetail() {
           <section className="portfolio__detail-achievements">
             <h2 className="portfolio__detail-section-title">⭐ 주요 성과</h2>
             <ul className="portfolio__detail-achievement-list">
-              {project.results.map((result, index) => (
-                <li className="portfolio__detail-achievement-item">{result}</li>
-              ))}
+              {project.results &&
+                project.results.map((result, index) => (
+                  <li className="portfolio__detail-achievement-item">
+                    {result}
+                  </li>
+                ))}
             </ul>
           </section>
           <section className="portfolio__detail-features">
