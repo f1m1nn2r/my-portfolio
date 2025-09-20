@@ -606,16 +606,16 @@ table {
   background: #2d5aa0;
 }
 .project-selection__label {
-  margin-bottom: 8px;
+  margin-bottom: 3px;
   font-family: "Pretendard", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 1.3;
+  line-height: 1.7;
   color: rgba(0, 0, 0, 0.5);
 }
 .project-selection__desc {
   font-family: "Pretendard", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.3;
   color: rgba(119, 119, 119, 0.5);
@@ -803,6 +803,61 @@ table {
   font-weight: 400;
   line-height: 1.3;
   color: #777777;
+}
+.portfolio__detail .timeline__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+}
+.portfolio__detail .timeline__item {
+  text-align: center;
+  padding: 50px 30px;
+  border: 1px solid #2d5aa0;
+  border-radius: 5px;
+}
+.portfolio__detail .timeline__item--problem {
+  background: #f4f6f9;
+}
+.portfolio__detail .timeline__item--solution {
+  background: #f4f6f9;
+}
+.portfolio__detail .timeline__item--result {
+  background: #e8eef3;
+}
+.portfolio__detail .timeline__step {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.portfolio__detail .timeline__step--problem {
+  color: #d32f2f;
+}
+.portfolio__detail .timeline__step--solution {
+  color: #2da0a0;
+}
+.portfolio__detail .timeline__step--result {
+  color: #2d5aa0;
+}
+.portfolio__detail .timeline__heading {
+  margin: 10px 0 15px;
+  font-family: "Pretendard", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.7;
+  color: #000;
+}
+.portfolio__detail .timeline__description {
+  word-break: keep-all;
+}
+.portfolio__detail .timeline__description--item {
+  margin-bottom: 10px;
+  font-family: "Pretendard", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #000;
+}
+.portfolio__detail .timeline__description--item:last-child {
+  margin-bottom: 0;
 }
 .portfolio__detail-achievement-item {
   margin-bottom: 6px;
