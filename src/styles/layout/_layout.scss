@@ -75,7 +75,7 @@
   }
 
   &__title {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     @include fn.typography(body-large, fn.color(primary), $weight: 600);
   }
   &__contact {
