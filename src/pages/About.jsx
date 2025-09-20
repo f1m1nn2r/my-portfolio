@@ -91,11 +91,11 @@ export default function About() {
                     {techItem.category}
                   </h4>
                   <ul className="profile__tech-list tag-group">
-                    {techItem.skils.map((skilsItem, index) => (
+                    {techItem.skills.map((skillsItem, index) => (
                       <li
-                        className={`profile__tech-item tag-group__item tag-group__item--${skilsItem.level}`}
+                        className={`profile__tech-item tag-group__item tag-group__item--${skillsItem.level}`}
                         key={index}>
-                        {skilsItem.name}
+                        {skillsItem.name}
                       </li>
                     ))}
                   </ul>
