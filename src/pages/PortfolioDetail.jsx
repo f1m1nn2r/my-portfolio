@@ -75,14 +75,13 @@ export default function PortfolioDetail() {
               ))}
           </Swiper>
         </figure>
-        {/* ## 한눈에 보기 - 구조 설계 */}
-
         <section className="portfolio__detail-design">
+          {/* ## 한눈에 보기 - 구조 설계 */}
           {project.table ? (
             <>
               <h2 className="portfolio__detail-section-title">⚙️ 구조 설계</h2>
               <table className="architecture__table">
-                <thead class="architecture__table-header">
+                <thead className="architecture__table-header">
                   <tr>
                     <th width="20%">카테고리</th>
                     <th width="25%">파일명</th>
@@ -131,6 +130,31 @@ export default function PortfolioDetail() {
               <h2 className="portfolio__detail-section-title">
                 🚀 문제점 개선&결과
               </h2>
+              <div className="timeline__container">
+                {project.timeline.map((timeLineItem, timelineIndex) => (
+                  <div
+                    className={`timeline__item timeline__item--${timeLineItem.type}`}
+                    key={`timeline-${timelineIndex}`}>
+                    <div
+                      className={`timeline__content timeline__content--${timeLineItem.type}`}>
+                      <div
+                        className={`timeline__step timeline__step--${timeLineItem.type}`}>
+                        {timeLineItem.type}
+                      </div>
+                      <h4 className="timeline__heading">
+                        {timeLineItem.category}
+                      </h4>
+                      <ul className="timeline__description">
+                        {timeLineItem.details.map((detail, detailIndex) => (
+                          <li key={`detail-${timelineIndex}-${detailIndex}`}>
+                            {detail}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </>
           )}
         </section>
