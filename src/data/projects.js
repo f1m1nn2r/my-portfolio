@@ -698,6 +698,31 @@ export const projects = [
       '시맨틱 마크업 구조 전면 개편 (SEO/접근성 향상)',
       'aria-label, role 속성 체계적 적용',
     ],
+    timeline: [
+      {
+        category: '비효율적인 수동 작업',
+        type: 'problem',
+        details: [
+          '서브메뉴 변경 시마다 CSS 높이값을 수동으로 계산하고 수정해야 하는 반복 작업이 발생했습니다.',
+          'PC와 모바일 버전을 각각 별도 관리하여 코드 중복과 유지보수 어려움이 지속되었습니다.',
+        ],
+      },
+      {
+        category: '자동화 시스템 구축',
+        type: 'solution',
+        details: [
+          'JavaScript 동적 높이 계산 시스템으로 서브메뉴 개수를 자동 감지하여 적절한 높이를 계산하도록 개선했습니다.',
+          'PC와 모바일 버전을 각각 별도 관리하여 코드 중복과 유지보수 어려움이 지속',
+        ],
+      },
+      {
+        category: '정량적 성과 달성',
+        type: 'results',
+        details: [
+          'JavaScript 동적 높이 계산 시스템으로 서브메뉴 개수를 자동 감지하여 적절한 높이를 계산하도록 개선했습니다.',
+        ],
+      },
+    ],
   },
   {
     id: 'newsroom',
