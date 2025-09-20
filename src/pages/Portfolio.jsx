@@ -1,9 +1,10 @@
 import { Outlet } from 'react-router-dom';
+import { ProjectProvider } from '../contexts/ProjectContext';
 import PortfolioNavigation from '../components/PortfolioNavigation';
 
 export default function Portfolio() {
   return (
-    <>
+    <ProjectProvider>
       <section className="portfolio__page">
         <div className="portfolio__container">
           <PortfolioNavigation />
@@ -12,6 +13,6 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
-    </>
+    </ProjectProvider>
   );
 }
