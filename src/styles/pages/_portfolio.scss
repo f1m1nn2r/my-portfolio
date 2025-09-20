@@ -352,3 +352,55 @@
     // END 구현 기능 상세
   }
 }
+
+.other {
+  &-works {
+    &__title {
+      @include fn.typography(h2);
+    }
+    &__content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3em;
+    }
+    &__card {
+      background: fn.color(lightSurface);
+      padding: 50px 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      }
+      &-header {
+        @include fn.flex-between;
+      }
+      &-title {
+        @include fn.typography(caption);
+      }
+      &-category {
+        background: fn.color(point);
+        padding: 4px 12px;
+        border-radius: 13px;
+        @include fn.typography(caption, $size: 14px, $color: fn.color(surface));
+      }
+      &-description {
+        margin: 15px 0px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(fn.color(point), 0.6);
+        @include fn.typography(
+          caption,
+          $size: 16px,
+          $weight: 400,
+          $color: fn.color(siverGray)
+        );
+      }
+      &-meta {
+        @include fn.flex-between;
+        @include fn.typography(caption, $size: 14px, $weight: 400);
+      }
+    }
+  }
+}
