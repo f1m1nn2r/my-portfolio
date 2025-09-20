@@ -1,7 +1,7 @@
 // ------------------------------------------ //
-@use './abstracts/reset'; /* 리셋 */
-@use './base/globals'; /* 전역 */
-@use './layout/layout'; /* 레이아웃 */
+@use './abstracts/reset';
+@use './base/globals';
+@use './layout/layout';
 
 @use './pages/about';
 @use './pages/portfolio';
