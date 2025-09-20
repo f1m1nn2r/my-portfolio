@@ -1,123 +1,19 @@
 import { useParams } from 'react-router-dom';
-import { projects } from '../data/projects';
+import { useProjects } from '../contexts/ProjectContext';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 export default function PortfolioDetail() {
   const { projectId } = useParams();
+  const { projects } = useProjects();
   const project = projects.find(p => p.id === projectId);
 
   if (!project) return <div>프로젝트를 찾을 수 없습니다.</div>;
 
-  // //-------------------------------------------------------
-  // const workScopeItem =
-  //   project.workScope?.map((workScopeList, index) => (
-  //     <li key={index} className="detail__description-item dash">
-  //       {workScopeList}
-  //     </li>
-  //   )) || [];
-
-  // const descriptionItem =
-  //   project.description?.map((descItem, index) => (
-  //     <li key={index} className="detail__description-item dash">
-  //       {descItem}
-  //     </li>
-  //   )) || [];
-
-  // const techStackItem = project.techStack
-  //   ? Object.entries(project.techStack).map(
-  //       ([stackCategory, stackValue], index) => (
-  //         <div key={index} className="detail__description-item dash">
-  //           <dt className="detail__section-category">{stackCategory}:</dt>
-  //           <dd className="detail__section-value">&nbsp;{stackValue}</dd>
-  //         </div>
-  //       ),
-  //     )
-  //   : [];
-
-  // const featuresItem = project.techFeatures?.map((featuresCategory, index) => (
-  //   <div key={index} className="detail__description-item">
-  //     <dt className="detail__section-category">{featuresCategory.name}</dt>
-  //     <dd className="detail__section-value">{featuresCategory.description}</dd>
-  //   </div>
-  // ));
-
-  // const projectImages = project.gallery?.map((image, index) => (
-  //   <div className="detail__image-wrapper">
-  //     <img
-  //       src={`/images/projects/${image}`}
-  //       alt={`${project.title} 프로젝트 이미지`}
-  //       className="detail__image"
-  //       key={index}
-  //     />
-  //   </div>
-  // ));
-
   return (
-    <>
-      {/* <header className="detail__header">
-        <h1 className="detail__title">{project.title}</h1>
-        <a
-          href={project.externalLink}
-          target="_blank"
-          className="detail__link"
-          rel="noopener noreferrer">
-          {project.externalLink}
-        </a>
-      </header>
-      <div className="detail__content">
-        <figure className="detail__figure">
-          {!project.gallery && (
-            <>
-              <img
-                src={`/images/projects/${project.id}.png`}
-                alt={`${project.title} 프로젝트 이미지`}
-                className="detail__image"
-              />
-              <figcaption className="sr-only">{project.title}</figcaption>
-            </>
-          )}
-          {project.gallery && projectImages}
-        </figure>
-        <div className="detail__info">
-          <section className="detail__section">
-            <dl className="detail__section-list">
-              <div className="detail__description-item">
-                <dt className="detail__section-label"># 소요 기간</dt>
-                <dd className="detail__section-value">{project.duration}</dd>
-              </div>
-            </dl>
-          </section>
-          <section className="detail__section">
-            <dl className="detail__section-list">
-              <div className="detail__description-item">
-                <dt className="detail__section-label"># 기여도</dt>
-                <dd className="detail__section-value">{project.role}</dd>
-              </div>
-            </dl>
-          </section>
-          {project.workScope && (
-            <section className="detail__section">
-              <dl className="detail__section-list">
-                <div className="detail__description-item">
-                  <dt className="detail__section-label"># 담당 업무</dt>
-                  <ul className="detail__section-value">{workScopeItem}</ul>
-                </div>
-              </dl>
-            </section>
-          )}
-          <section className="detail__section detail__section--tech-stack">
-            <h3 className="detail__section-label"># 주요 기술 스택</h3>
-            <dl className="detail__section-list">{techStackItem}</dl>
-          </section>
-          <section className="detail__section detail__section--tech-features">
-            <dl className="detail__section-list">
-              <dt className="detail__section-label"># 주요 기능</dt>
-              {featuresItem}
-            </dl>
-          </section>
-        </div>
-    </div> */}
-
-      <div className="portfolio__detail">
+    <div className="portfolio__detail">
+      <div className="portfolio__detail-content">
         <div className="portfolio__detail-text">
           <header className="portfolio__detail-header">
             <h2 className="portfolio__detail-title">{project.title}</h2>
@@ -146,88 +42,137 @@ export default function PortfolioDetail() {
             <div className="portfolio__detail-tech">
               <h3 className="portfolio__detail-tech-title">🛠️ 사용 기술</h3>
               <ul className="portfolio__detail-tech-list tag-group">
-                <li className="portfolio__detail-tech-item tag-group__item">
-                  JavaScript
-                </li>
-                <li className="portfolio__detail-tech-item tag-group__item">
-                  jQuery
-                </li>
-                <li className="portfolio__detail-tech-item tag-group__item">
-                  JSP
-                </li>
-                <li className="portfolio__detail-tech-item tag-group__item">
-                  Ajax
-                </li>
+                {project.usedTechs &&
+                  project.usedTechs.map((skillItem, index) => (
+                    <li
+                      className={`portfolio__detail-tech-item tag-group__item tag-group__item--${skillItem.level}`}
+                      key={index}>
+                      {skillItem.name}
+                    </li>
+                  ))}
               </ul>
             </div>
           </div>
         </div>
+        {/* ## 프로젝트 이미지 */}
+        <figure className="portfolio__detail-figure">
+          <Swiper className="portfolio__detail-figure-slider">
+            {project.gallery &&
+              project.gallery.map((galleryItem, index) => (
+                <SwiperSlide
+                  className="portfolio__detail-figure-slide"
+                  key={index}>
+                  <img
+                    src={`/images/projects/${galleryItem.image}.png`}
+                    alt={`${project.title} 프로젝트 이미지`}
+                    className="portfolio__detail-figure-image"
+                  />
+                  <div className="portfolio__detail-figure-text">
+                    <p key={index}>{galleryItem.description}</p>
+                  </div>
+                  <figcaption className="sr-only">{project.title}</figcaption>
+                </SwiperSlide>
+              ))}
+          </Swiper>
+        </figure>
+        {/* ## 한눈에 보기 - 구조 설계 */}
 
-        <div className="portfolio__detail-content">
-          <figure className="portfolio__detail-figure">
-            <img src="" alt="" className="portfolio__detail-image" />
-          </figure>
-          <section className="portfolio__detail-achievements">
-            <h2 className="portfolio__detail-section-title">⭐ 주요 성과</h2>
-            <ul className="portfolio__detail-achievement-list">
-              {project.results &&
-                project.results.map((result, index) => (
-                  <li className="portfolio__detail-achievement-item">
+        <section className="portfolio__detail-design">
+          {project.table ? (
+            <>
+              <h2 className="portfolio__detail-section-title">⚙️ 구조 설계</h2>
+              <table className="architecture__table">
+                <thead class="architecture__table-header">
+                  <tr>
+                    <th width="20%">카테고리</th>
+                    <th width="25%">파일명</th>
+                    <th width="55%">역할 및 기능</th>
+                  </tr>
+                </thead>
+                <tbody className="architecture__table-body">
+                  {project.table.map((tableItem, categoryIndex) =>
+                    tableItem.dataSources.map((dataSource, sourceIndex) => (
+                      <tr key={`${categoryIndex}-${sourceIndex}`}>
+                        {sourceIndex === 0 && (
+                          <td
+                            className="architecture__table-cell architecture__category-cell"
+                            rowSpan={tableItem.dataSources.length}
+                            data-label="카테고리">
+                            <span className="architecture__category-badge">
+                              {tableItem.category}
+                            </span>
+                          </td>
+                        )}
+
+                        <td className="architecture__table-cell">
+                          <div className="architecture__file-name">
+                            {dataSource.description}
+                          </div>
+                          <div className="architecture__file-path">
+                            {dataSource.file}
+                          </div>
+                        </td>
+
+                        <td
+                          className="architecture__table-cell"
+                          data-label="기능">
+                          <div className="architecture__file-desc">
+                            {dataSource.function}
+                          </div>
+                        </td>
+                      </tr>
+                    )),
+                  )}
+                </tbody>
+              </table>
+            </>
+          ) : (
+            <>
+              <h2 className="portfolio__detail-section-title">
+                🚀 문제점 개선&결과
+              </h2>
+            </>
+          )}
+        </section>
+
+        <div className="portfolio__detail-grid">
+          {/* ##구현 기능 상세 */}
+          {project.features && (
+            <section className="portfolio__detail-features">
+              <h2 className="portfolio__detail-section-title">
+                📋 구현 기능 요약
+              </h2>
+
+              <div className="portfolio__detail-feature-group">
+                <ul className="portfolio__detail-feature-list">
+                  {project.features.map((featuresItem, index) => (
+                    <li
+                      className="portfolio__detail-feature-item dash"
+                      key={index}>
+                      {featuresItem}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+          )}
+          {/* ## 주요 성과 */}
+          {project.results && (
+            <section className="portfolio__detail-achievements">
+              <h2 className="portfolio__detail-section-title">⭐ 주요 성과</h2>
+              <ul className="portfolio__detail-achievement-list">
+                {project.results.map((result, index) => (
+                  <li
+                    className="portfolio__detail-achievement-item dash"
+                    key={index}>
                     {result}
                   </li>
                 ))}
-            </ul>
-          </section>
-          <section className="portfolio__detail-features">
-            <h2 className="portfolio__detail-section-title">
-              🔧 구현 기능 상세
-            </h2>
-
-            <div className="portfolio__detail-feature-group">
-              <h3 className="portfolio__detail-feature-title">
-                실시간 필터링 시스템
-              </h3>
-              <ul className="portfolio__detail-feature-list">
-                <li className="portfolio__detail-feature-item">
-                  필터 변경 시 서버 데이터 요청 및 콘텐츠 실시간 업데이트
-                </li>
-                <li className="portfolio__detail-feature-item">
-                  검색 결과 개수 표시 및 상세 정보 팝업 구현
-                </li>
               </ul>
-            </div>
-
-            <div className="portfolio__detail-feature-group">
-              <h3 className="portfolio__detail-feature-title">
-                멀티미디어 슬라이더
-              </h3>
-              <ul className="portfolio__detail-feature-list">
-                <li className="portfolio__detail-feature-item">
-                  동영상/이미지 통합 슬라이더 구성
-                </li>
-                <li className="portfolio__detail-feature-item">
-                  각 콘텐츠마다 고유 ID를 부여해 클릭 시 ID 값과 동일한 상세
-                  정보 팝업 형태로 표시
-                </li>
-              </ul>
-            </div>
-
-            <div className="portfolio__detail-feature-group">
-              <h3 className="portfolio__detail-feature-title">
-                사용자 경험 최적화
-              </h3>
-              <ul className="portfolio__detail-feature-list">
-                <li className="portfolio__detail-feature-item">
-                  검색 결과 없음 시 "다른 콘텐츠를 발견해보세요" 유도 메시지
-                </li>
-                <li className="portfolio__detail-feature-item">
-                  DOM 조작 최적화로 화면 깜빡임 최소화
-                </li>
-              </ul>
-            </div>
-          </section>
+            </section>
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
