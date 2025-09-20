@@ -765,6 +765,18 @@ table {
   overflow: hidden;
   position: relative;
 }
+.portfolio__detail-figure .swiper-pagination {
+  bottom: 20px;
+}
+.portfolio__detail-figure .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(244, 246, 249, 0.5);
+  opacity: 1;
+}
+.portfolio__detail-figure .swiper-pagination-bullet-active {
+  background: #f4f6f9;
+}
 .portfolio__detail .architecture__table {
   width: 100%;
   border-spacing: 20px 10px;
