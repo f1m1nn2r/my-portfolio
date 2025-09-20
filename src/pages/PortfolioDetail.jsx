@@ -2,7 +2,9 @@ import { useParams } from 'react-router-dom';
 import { useProjects } from '../contexts/ProjectContext';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/pagination';
 
 export default function PortfolioDetail() {
   const { projectId } = useParams();
@@ -56,7 +58,10 @@ export default function PortfolioDetail() {
         </div>
         {/* ## 프로젝트 이미지 */}
         <figure className="portfolio__detail-figure">
-          <Swiper className="portfolio__detail-figure-slider">
+          <Swiper
+            modules={[Pagination]}
+            pagination={{ clickable: true }}
+            className="portfolio__detail-figure-slider">
             {project.gallery &&
               project.gallery.map((galleryItem, index) => (
                 <SwiperSlide
