@@ -1,7 +1,9 @@
 import { NavLink } from 'react-router-dom';
-import { projects } from '../data/projects';
+import { useProjects } from '../contexts/ProjectContext';
 
 export default function PortfolioNavigation() {
+  const { projects } = useProjects();
+
   return (
     <aside
       className="project-selection"
