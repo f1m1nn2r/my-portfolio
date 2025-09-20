@@ -538,33 +538,114 @@ export const projects = [
       '교육 콘텐츠를 효율적으로 탐색할 수 있도록 필터링 시스템을 구현했습니다. 사용자가 원하는 조건에 따라 실시간으로 콘텐츠를 필터링하고, 검색 결과를 직관적으로 표시하는 시스템을 개발했습니다. 특히 예외 상황 처리와 사용자 경험 개선에 중점을 두어 개발했습니다.',
     duration: '25.07.28 - 25.09.03 [약 1개월 소요]',
     role: '전체 작업 100%',
+    usedTechs: [
+      {
+        name: 'JavaScript',
+        level: 'proficient',
+      },
+      { name: 'jQuery', level: 'proficient' },
+      { name: 'JSON API', level: 'experienced' },
+      { name: 'Ajax', level: 'experienced' },
+    ],
     link: 'https://www.home-learn.co.kr/observe/all-services.do',
-    gallery: ['all-services.png', 'all-services-popup.png'],
+    gallery: [
+      {
+        description: '메인 화면 스크린샷',
+        image: 'all-services',
+      },
+      {
+        description: '팝업 화면',
+        image: 'all-services-popup',
+      },
+    ],
     results: [
-      '1. 서로 다른 데이터 소스(전체 DB, 맞춤형 데이터, 인기 TOP5) 통합',
-      '2. 백엔드 개발자와 협업하여 데이터 스키마부터 프론트엔드 로직까지 최적화',
-      '3. 일관된 상세 팝업 인터페이스 설계 및 구현',
+      '서로 다른 데이터 소스(전체 DB, 맞춤형 데이터, 인기 TOP5) 통합',
+      '백엔드 개발자와 협업하여 데이터 스키마부터 프론트엔드 로직까지 최적화',
+      '일관된 상세 팝업 인터페이스 설계 및 구현',
     ],
     features: [
+      '필터 변경 시 서버 데이터 요청 및 콘텐츠 실시간 업데이트',
+      '검색 결과 개수 표시 및 상세 정보 팝업 구현',
+      '동영상/이미지 통합 슬라이더 구성',
+      '각 콘텐츠마다 고유 ID를 부여해 클릭 시 ID 값과 동일한 상세 정보 팝업 형태로 표시',
+      '검색 결과 없음 시 "다른 콘텐츠를 발견해보세요" 유도 메시지',
+      'DOM 조작 최적화로 화면 깜빡임 최소화',
+    ],
+    table: [
       {
-        summary: '실시간 필터링 시스템',
-        details: [
-          '- 필터 변경 시 서버 데이터 요청 및 콘텐츠 실시간 업데이트',
-          '- 검색 결과 개수 표시 및 상세 정보 팝업 구현',
+        category: '데이터',
+        dataSources: [
+          {
+            description: '서버 DB 로드',
+            file: 'onMoreResult.json',
+            function:
+              '서버에서 실시간으로 콘텐츠 데이터를 가져오는 핵심 데이터 소스',
+          },
+          {
+            description: '학습법 찾기 연동',
+            file: 'loadResultJsonDataBind.json',
+            function: '개인별 맞춤 학습법 추천을 위한 데이터 바인딩',
+          },
+          {
+            description: '인기 학습 콘텐츠 TOP5',
+            file: 'topItems.json',
+            function: '사용자들이 가장 많이 선택한 학습 콘텐츠 순위 데이터',
+          },
         ],
       },
       {
-        summary: '멀티미디어 슬라이더',
-        details: [
-          '- 동영상/이미지 통합 슬라이더 구성',
-          '- 각 콘텐츠마다 고유 ID를 부여해 클릭 시 ID 값과 동일한 상세 정보 팝업 형태로 표시',
+        category: '스크립트',
+        dataSources: [
+          {
+            description: '전체 스크립트 총괄',
+            file: 'main.js',
+            function: '모든 모듈을 통합 관리하는 메인 컨트롤러 역할',
+          },
+          {
+            description: 'API 연동',
+            file: 'api.js',
+            function: '서버 DB 연결 및 TOP5 데이터 통신 처리',
+          },
+          {
+            description: '필터 타입별 동적 체크박스',
+            file: 'filter.js',
+            function: '체크박스 상태 변경 및 필터 조건 관리 시스템',
+          },
+          {
+            description: '상세 팝업',
+            file: 'popup.js',
+            function: '전체 페이지 스타일링 및 반응형 디자인',
+          },
+          {
+            description: '학습 콘텐츠 생성',
+            file: 'render.js',
+            function: '동적 콘텐츠 HTML 생성 및 화면 렌더링',
+          },
+          {
+            description: '슬라이더 출력',
+            file: 'slider.js',
+            function: '이미지/비디오 슬라이더 컴포넌트 구현',
+          },
+          {
+            description: '공통 함수 출력',
+            file: 'utils.js',
+            function: '재사용 가능한 유틸리티 함수 모음',
+          },
+          {
+            description: 'DOM 캐싱',
+            file: 'domCache.js',
+            function: 'DOM 요소 캐싱을 통한 성능 최적화',
+          },
         ],
       },
       {
-        summary: '사용자 경험 최적화',
-        details: [
-          '- 검색 결과 없음 시 "다른 콘텐츠를 발견해보세요" 유도 메시지',
-          '- DOM 조작 최적화로 화면 깜빡임 최소화',
+        category: '스타일',
+        dataSources: [
+          {
+            description: '메인 스타일시트',
+            file: 'style.scss',
+            function: '전체 페이지 스타일링 및 반응형 디자인',
+          },
         ],
       },
     ],
@@ -575,9 +656,48 @@ export const projects = [
     preview: '사용자 인터랙션 시스템',
     title: '홈런 중등 - 일부 리뉴얼',
     subtitle: '[메뉴 리뉴얼, nav 구조 정비, 신규 페이지 작업]',
+    description:
+      '홈런 중등 웹사이트의 사용자 경험 향상을 위해 전체 사이트 네비게이션 시스템을 재설계했습니다. 서브메뉴 높이 자동 계산, URL 기반 현재 페이지 감지, 반응형 메뉴 전환 등 동적 인터랙션을 구현하여 관리 효율성을 크게 개선했습니다. 또한 레거시 코드의 시맨틱 마크업 전환과 웹 접근성 표준 적용을 통해 코드 품질과 사용자 접근성을 동시에 향상시켰습니다.',
     duration: '25.06.13 - 25.07.02 [약 3주 소요]',
     role: '전체 작업 100%',
+    usedTechs: [
+      {
+        name: 'JavaScript',
+        level: 'proficient',
+      },
+      { name: 'jQuery', level: 'proficient' },
+      { name: 'Handlebars.js', level: 'experienced' },
+      { name: 'Body-scroll-lock', level: 'experienced' },
+    ],
     link: 'https://mid.home-learn.co.kr/',
+    gallery: [
+      {
+        description: '네비게이션 화면',
+        image: 'mid-navigation',
+      },
+      {
+        description: '무료체험신청 스크린샷',
+        image: 'mid-studyAppFreeDetail',
+      },
+      {
+        description: '홈런매스터링 스크린샷',
+        image: 'mid-mathtering',
+      },
+    ],
+    results: [
+      '서브메뉴 높이 자동 계산 시스템으로 메뉴 관리 작업 80% 단축',
+      '레거시 코드 리팩토링을 통한 div 태그 사용률 70% 감소 및 시맨틱 구조 전환',
+      '통합 네비게이션 구조로 PC/모바일 중복 코드 관리 비용 절약',
+    ],
+    features: [
+      '서브메뉴 동적 높이 관리 및 현재 페이지 표시',
+      '스크롤 고정 헤더 (PC 환경 조건부 적용)',
+      '다단계 학년 선택 시스템 구현',
+      '개인정보 동의 관리 (전체/개별 연동)',
+      '아코디언 FAQ 인터랙션',
+      '시맨틱 마크업 구조 전면 개편 (SEO/접근성 향상)',
+      'aria-label, role 속성 체계적 적용',
+    ],
   },
   {
     id: 'newsroom',
