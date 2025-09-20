@@ -1,7 +1,7 @@
 export const techSkills = [
   {
     category: '프론트엔드',
-    skils: [
+    skills: [
       {
         name: 'JavaScript',
         level: 'proficient',
@@ -11,8 +11,12 @@ export const techSkills = [
         level: 'proficient',
       },
       {
+        name: 'JSP',
+        level: 'experienced',
+      },
+      {
         name: 'PHP',
-        level: 'familiar',
+        level: 'experienced',
       },
       {
         name: 'React',
@@ -26,24 +30,24 @@ export const techSkills = [
   },
   {
     category: '버전 컨트롤',
-    skils: [
+    skills: [
       {
         name: 'GitHub',
-        level: 'familiar',
+        level: 'proficient',
       },
       {
         name: 'GitLab',
-        level: 'familiar',
+        level: 'experienced',
       },
       {
         name: 'SourceTree',
-        level: 'familiar',
+        level: 'proficient',
       },
     ],
   },
   {
     category: '프로젝트 관리',
-    skils: [
+    skills: [
       {
         name: 'Trello',
         level: 'experienced',
@@ -60,14 +64,14 @@ export const techSkills = [
   },
   {
     category: '디자인 툴',
-    skils: [
+    skills: [
       {
         name: 'Figma',
-        level: 'experienced',
+        level: 'proficient',
       },
       {
         name: 'Photoshop',
-        level: 'experienced',
+        level: 'familiar',
       },
       {
         name: 'Zeplin',
