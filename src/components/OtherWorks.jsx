@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useProjects } from '../contexts/ProjectContext';
+
 export default function OtherWorks() {
+  const { otherWorks } = useProjects();
+
   return (
     <>
       <header className="other-works__header ">
@@ -12,34 +16,46 @@ export default function OtherWorks() {
         <li className="other-works__filter-tab">
           <button className="other-works__filter-tab-button">전체</button>
         </li>
-        <li className="other-works__filter-tab">
-          <button className="other-works__filter-tab-button">홈페이지</button>
-        </li>
-        <li className="other-works__filter-tab">
-          <button className="other-works__filter-tab-button">
-            랜딩 페이지
-          </button>
-        </li>
-        <li className="other-works__filter-tab">
-          <button className="other-works__filter-tab-button">기타</button>
-        </li>
+        {otherWorks.map((otherWork, index) => (
+          <li className="other-works__filter-tab" key={index}>
+            <button className="other-works__filter-tab-button">
+              {otherWork.category}
+            </button>
+          </li>
+        ))}
       </ul>
       <div className="other-works__content">
-        <div className="other-works__card">
-          <header className="other-works__card-header">
-            <h3 className="other-works__card-title">프로젝트명</h3>
-            <span className="other-works__card-category">카테고리명</span>
-          </header>
-          <p className="other-works__card-description">
-            프로젝트 설명 간략 1~2줄
-          </p>
-          <div className="other-works__card-meta">
-            <time dateTime="" className="other-works__card-period">
-              소요 기간
-            </time>
-            <Link to="">자세히 보기</Link>
-          </div>
-        </div>
+        {otherWorks.map(
+          (otherWork, otherWorkIndex) =>
+            otherWork.details?.map((detail, detailIndex) => (
+              <div
+                key={`${otherWorkIndex}-${detailIndex}`}
+                className="other-works__card">
+                <header className="other-works__card-header">
+                  <h3 className="other-works__card-title">{detail.name}</h3>
+                  <span className="other-works__card-category">
+                    {otherWork.category}
+                  </span>
+                </header>
+                <p className="other-works__card-description">
+                  {detail.description}
+                </p>
+                <div className="other-works__card-meta">
+                  <time className="other-works__card-period">
+                    {detail.period}
+                  </time>
+                  {detail.link && (
+                    <a
+                      href={detail.link}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      자세히 보기
+                    </a>
+                  )}
+                </div>
+              </div>
+            )) || null,
+        )}
       </div>
     </>
   );
