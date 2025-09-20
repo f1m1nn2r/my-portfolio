@@ -1,11 +1,11 @@
 import { createContext, useContext } from 'react';
-import { projects } from '../data/projects';
+import { projects, otherWorks } from '../data/projects';
 
 const ProjectContext = createContext();
 
 export const ProjectProvider = ({ children }) => {
   return (
-    <ProjectContext.Provider value={{ projects }}>
+    <ProjectContext.Provider value={{ projects, otherWorks }}>
       {children}
     </ProjectContext.Provider>
   );
