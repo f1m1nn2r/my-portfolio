@@ -1,157 +1,8 @@
 @use '../abstracts/functions' as fn;
 
-.portfolio {
-  &__container {
-    display: flex;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 39px rgba(fn.color(point), 0.15);
-  }
-  &__content {
-    padding: 100px;
-    @include fn.responsive-width(100%, $max: calc(100% - 187px));
-  }
-
-  // 좌측 네비게이션
-  &__nav {
-    &-menu {
-      @include fn.responsive-width(100%, $max: 117px);
-    }
-
-    &-category {
-      margin-bottom: 30px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-    &-title {
-      margin-bottom: 15px;
-      @include fn.typography(caption, $weight: 700);
-    }
-    &-item {
-      margin-bottom: 15px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-    &-link {
-      font-size: 16px;
-      font-weight: 400;
-      color: fn.color(siverGray);
-      &--active {
-        color: fn.color(primary);
-        font-weight: 500;
-      }
-    }
-  }
-  // END 좌측 네비게이션
-
-  // 상세 콘텐츠
-  .detail {
-    &__header {
-      margin-bottom: 50px;
-    }
-    &__title {
-      margin-bottom: 10px;
-      @include fn.typography(h2);
-    }
-    &__link {
-      border-bottom: 1px solid;
-      @include fn.typography(caption, $color: fn.color(point));
-    }
-    &__content {
-      display: flex;
-      gap: 0 70px;
-      align-items: flex-start;
-    }
-    &__figure {
-      @include fn.responsive-width(100%, $max: calc(100% - 670px));
-    }
-    &__image {
-      border: 1px solid fn.color(border);
-      display: block;
-      width: 100%;
-
-      &-wrapper {
-        margin-bottom: 30px;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-    }
-
-    &__section {
-      &-title {
-        margin-bottom: 6px;
-        @include fn.typography(body, $color: fn.color(primary), $weight: 700);
-      }
-    }
-    &__info {
-      position: sticky;
-      top: 20px;
-      @include fn.responsive-width(100%, $max: 740px);
-    }
-    &__section {
-      margin-bottom: 30px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-      &-list {
-        @include fn.typography(caption, $color: fn.color(gray), $weight: 400);
-      }
-      &-label {
-        margin-bottom: 10px;
-        @include fn.typography(body, $color: fn.color(primary), $weight: 700);
-      }
-      &-category {
-        font-weight: 700;
-        color: fn.color(primary);
-      }
-      &-value {
-        word-break: keep-all;
-        @include fn.typography(caption, $color: fn.color(gray), $weight: 400);
-      }
-      &--tech {
-        &-stack {
-          .detail__section {
-            &-category,
-            &-value {
-              display: inline-block;
-            }
-          }
-        }
-        &-features {
-          .detail {
-            &__section-category {
-              color: fn.color(primary);
-              margin-bottom: 7px;
-            }
-            &__description-item {
-              margin-bottom: 30px;
-            }
-          }
-        }
-      }
-    }
-    &__description {
-      &-item {
-        margin-bottom: 5px;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
-  // END 상세 콘텐츠
-}
-
 .project {
   &-selection {
+    background: fn.color(lightSurface);
     @include fn.responsive-width(100%, $max: 279px);
     &__header {
       padding: 40px 50px;
@@ -164,9 +15,6 @@
         $color: fn.color(surface),
         $weight: 600
       );
-    }
-    &__content {
-      background: #f4f6f9;
     }
     &__list {
       padding: 0 20px;
@@ -230,17 +78,34 @@
 }
 
 .portfolio {
+  &__container {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 39px rgba(fn.color(point), 0.15);
+  }
+  &__content {
+    padding: 100px;
+    overflow: auto;
+    @include fn.responsive-width(100%, $max: calc(100% - 279px));
+    @include fn.responsive-height(100%, $max: 700px);
+  }
+
   &__detail {
     &-text {
       display: flex;
       gap: 0 40px;
+      margin-bottom: 70px;
+    }
+    &-header {
+      @include fn.responsive-width(100%, $max: calc(100% - 443px));
     }
     &-title {
       @include fn.typography(h1);
     }
     &-subtitle {
       margin: 5px 0 12px;
-      @include fn.typography(body, $weight: 300, $color: fn.color(gray));
+      @include fn.typography(body, $color: fn.color(siverGray));
     }
     &-link {
       @include fn.typography(body, $color: fn.color(point));
@@ -254,7 +119,7 @@
       margin-top: 35px;
       word-break: keep-all;
       @include fn.typography(
-        caption,
+        body,
         $weight: 400,
         $color: fn.color(primary),
         $line-height: 1.5
@@ -268,6 +133,7 @@
       @include fn.responsive-width(100%, $max: 403px);
 
       h3 {
+        margin-bottom: 8px;
         @include fn.typography(body, $color: fn.color(primary), $weight: 600);
       }
     }
@@ -276,7 +142,6 @@
     }
     &-contribution {
       &-role {
-        margin-top: 5px;
         @include fn.typography(caption, $color: fn.color(gray));
       }
     }
@@ -289,9 +154,86 @@
         @include fn.typography(body-large);
       }
     }
-    &-achievements {
-      margin: 70px 0;
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: flex-start;
+      gap: 2em;
+      margin-top: 70px;
     }
+
+    // 이미지
+    &-figure {
+      margin-bottom: 70px;
+      &-text {
+        position: absolute;
+        @include fn.position-center;
+        @include fn.typography(
+          body-large,
+          $weight: 500,
+          $color: fn.color(surface)
+        );
+      }
+      &-image {
+        width: 100%;
+        filter: brightness(0.4);
+        object-fit: cover;
+        object-position: top;
+        height: 100%;
+      }
+      .swiper {
+        &-slide {
+          height: 500px;
+          overflow: hidden;
+          position: relative;
+        }
+      }
+    }
+    // END 이미지
+
+    // 구조 설계
+    .architecture {
+      &__table {
+        width: 100%;
+        border-spacing: 20px 10px;
+        border-collapse: initial;
+
+        th,
+        td {
+          border-radius: 5px;
+        }
+        td {
+          border: 1px solid rgba(fn.color(point), 0.4);
+          text-align: center;
+          vertical-align: middle;
+          @include fn.typography(caption);
+        }
+        &-header {
+          background: rgba(fn.color(point), 0.4);
+          @include fn.typography(body, $weight: 600, $color: fn.color(primary));
+
+          th {
+            padding: 10px 0;
+          }
+        }
+        &-cell {
+          padding: 20px 0;
+        }
+      }
+      &__file {
+        &-path {
+          @include fn.typography(
+            caption,
+            $weight: 400,
+            $color: fn.color(siverGray),
+            $size: 16px
+          );
+        }
+      }
+    }
+    // END 구조 설계
+
+    // 주요 성과
     &-achievement {
       &-item {
         margin-bottom: 6px;
@@ -302,5 +244,34 @@
         }
       }
     }
+    // END 주요 성과
+
+    // 구현 기능 상세
+    &-feature {
+      &-group {
+        margin-bottom: 40px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      &-title {
+        padding: 6px 35px;
+        display: inline-block;
+        background: rgba(fn.color(point), 0.4);
+        border-radius: 27px;
+        margin-bottom: 20px;
+        @include fn.typography(body, $color: fn.color(primary), $weight: 700);
+      }
+      &-item {
+        margin-bottom: 6px;
+        @include fn.typography(caption, $weight: 400);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    // END 구현 기능 상세
   }
 }
