@@ -48,9 +48,9 @@
       }
     }
     &__label {
-      margin-bottom: 8px;
+      margin-bottom: 3px;
       @include fn.typography(
-        body-large,
+        body,
         $color: rgba(fn.color(primary), 0.5),
         $weight: 500
       );
@@ -59,7 +59,8 @@
       @include fn.typography(
         caption,
         $color: rgba(fn.color(siverGray), 0.5),
-        $weight: 400
+        $weight: 400,
+        $size: 16px
       );
     }
     &__link {
@@ -232,6 +233,69 @@
       }
     }
     // END 구조 설계
+
+    // 문제점 개선&결과
+    .timeline {
+      &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5em;
+      }
+      &__item {
+        text-align: center;
+        padding: 50px 30px;
+        border: 1px solid fn.color(point);
+        border-radius: 5px;
+
+        $bgColor: (
+          'problem': fn.color(lightSurface),
+          'solution': fn.color(lightSurface),
+          'result': #e8eef3,
+        );
+        @each $type, $color in $bgColor {
+          &--#{$type} {
+            background: $color;
+          }
+        }
+      }
+      &__step {
+        text-transform: uppercase;
+        font-weight: 500;
+
+        $colors: (
+          'problem': #d32f2f,
+          'solution': #2da0a0,
+          'result': fn.color(point),
+        );
+        @each $type, $color in $colors {
+          &--#{$type} {
+            color: $color;
+          }
+        }
+      }
+      &__heading {
+        margin: 10px 0 15px;
+        @include fn.typography(body, $weight: 700, $color: fn.color(primary));
+      }
+      &__description {
+        word-break: keep-all;
+
+        &--item {
+          margin-bottom: 10px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+          @include fn.typography(
+            caption,
+            $weight: 400,
+            $color: fn.color(primary),
+            $line-height: 1.4
+          );
+        }
+      }
+    }
+    // END 문제점 개선&결과
 
     // 주요 성과
     &-achievement {
