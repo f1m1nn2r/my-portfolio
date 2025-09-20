@@ -13,49 +13,47 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## 포트폴리오 구조 구상
 
-<!-- prettier-ignore-start -->
 portfolio/
 ├── public/
-│   ├── images/                          # 포트폴리오 이미지, 프로필 사진
-│   ├── resume.pdf                       # 이력서 파일
-│   └── favicon.ico                      # 파비콘 만들 수 있으면
+│ ├── images/ # 포트폴리오 이미지, 프로필 사진
+│ ├── resume.pdf # 이력서 파일
+│ └── favicon.ico # 파비콘 만들 수 있으면
 ├── src/
-│   ├── components/                                           
-│   │   ├── Layout.jsx                   # 전체 레이아웃 구조 설정(Outlet)
-│   │   ├── Header.jsx                   # 헤더
-│   │   ├── Footer.jsx                   # 풋터
-│   │   ├── Navigation.jsx               # 메뉴
-│   ├── pages/                                                
-│   │   ├── About.jsx                    # 내 소개
-│   │   ├── Experience.jsx               # 경력
-│   │   └── Portfolio.jsx                # 작업물
-│   │   └── Contact.jsx                  # 연락처
-│   │   └── Behind.jsx                   # 비하인드, 어떻게 작업했는지
-│   ├── data/                                                 
-│   │   ├── projects.js                  # 포트폴리오 데이터
-│   │   ├── experience.js                # 경력 데이터
-│   ├── styles/                                               
-│   │   ├── index.css                    # 전체 css 임포트용
-│   │   ├── abstracts/
-│   │   │   └── _mixins.scss             # 믹스인 모음
-│   │   │   └── _variables.scss          # 변수들(색상, 폰트 등)
-│   │   │   └── _reset.scss              # 페이지 리셋
-│   │   └── base/        
-│   │       └── _globals.scss            # 공통 클래스, 기본 스타일
-│   │   └── layout/        
-│   │       └── _layout.scss             # 헤더/풋터
-│   │   └── pages/        
-│   │       └── _about.scss              # 내 소개
-│   │       └── _experience.scss         # 경력
-│   │       └── _portfolio.scss          # 포트폴리오
-│   │       └── _portfolioDetail.scss    # 포트폴리오 상세 내용
-│   │       └── _behind.scss             # 비하인드, 어떻게 작업했는지
-│   ├── hooks/                           # 커스텀 훅(필요시)
-│   ├── utils/                           # 유틸리티 함수(필요시)
-│   ├── App.js
-│   └── index.js
+│ ├── components/  
+│ │ ├── Layout.jsx # 전체 레이아웃 구조 설정(Outlet)
+│ │ ├── Header.jsx # 헤더
+│ │ ├── Footer.jsx # 풋터
+│ │ ├── Navigation.jsx # 메뉴
+│ ├── pages/  
+│ │ ├── About.jsx # 내 소개
+│ │ ├── Experience.jsx # 경력
+│ │ └── Portfolio.jsx # 작업물
+│ │ └── Contact.jsx # 연락처
+│ │ └── Behind.jsx # 비하인드, 어떻게 작업했는지
+│ ├── data/  
+│ │ ├── projects.js # 포트폴리오 데이터
+│ │ ├── experience.js # 경력 데이터
+│ ├── styles/  
+│ │ ├── index.css # 전체 css 임포트용
+│ │ ├── abstracts/
+│ │ │ └── \_mixins.scss # 믹스인 모음
+│ │ │ └── \_variables.scss # 변수들(색상, 폰트 등)
+│ │ │ └── \_reset.scss # 페이지 리셋
+│ │ └── base/  
+│ │ └── \_globals.scss # 공통 클래스, 기본 스타일
+│ │ └── layout/  
+│ │ └── \_layout.scss # 헤더/풋터
+│ │ └── pages/  
+│ │ └── \_about.scss # 내 소개
+│ │ └── \_experience.scss # 경력
+│ │ └── \_portfolio.scss # 포트폴리오
+│ │ └── \_portfolioDetail.scss # 포트폴리오 상세 내용
+│ │ └── \_behind.scss # 비하인드, 어떻게 작업했는지
+│ ├── hooks/ # 커스텀 훅(필요시)
+│ ├── utils/ # 유틸리티 함수(필요시)
+│ ├── App.js
+│ └── index.js
 └── package.json
-<!-- prettier-ignore-end -->
 
 ## 커밋 개인 규칙
 
