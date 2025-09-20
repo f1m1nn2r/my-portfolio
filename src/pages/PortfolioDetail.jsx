@@ -146,7 +146,9 @@ export default function PortfolioDetail() {
                       </h4>
                       <ul className="timeline__description">
                         {timeLineItem.details.map((detail, detailIndex) => (
-                          <li key={`detail-${timelineIndex}-${detailIndex}`}>
+                          <li
+                            className="timeline__description--item dash"
+                            key={`detail-${timelineIndex}-${detailIndex}`}>
                             {detail}
                           </li>
                         ))}
