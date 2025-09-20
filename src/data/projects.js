@@ -1,5 +1,3 @@
-
-
 export const projects = [
   {
     id: 'all-services',
@@ -334,5 +332,111 @@ export const projects = [
         ],
       },
     ],
+  },
+];
+
+export const otherWorks = [
+  {
+    category: '홈페이지',
+    details: [
+      {
+        name: '지인추천',
+        description: '지인추천 페이지 설명',
+        period: '2025.09',
+        link: 'https://www.home-learn.co.kr/jiin/JiinRecommendCreateUrl.do',
+      },
+      {
+        name: '학교공부 예·복습',
+        description: '학교공부 예·복습 페이지 설명',
+        period: '2025.07',
+        link: 'https://www.home-learn.co.kr/homelearn/intro107/prepare-review-study.html',
+      },
+      {
+        name: '영어완성',
+        description: '영어완성 페이지 설명',
+        period: '2025.07',
+        link: 'https://www.home-learn.co.kr/homelearn/intro107/english-master.html',
+      },
+      {
+        name: '특별학습',
+        description: '특별학습 페이지 설명',
+        period: '2025.06',
+        link: 'https://www.home-learn.co.kr/homelearn/intro107/SpecialCont.html',
+      },
+      {
+        name: '스마트학습센터',
+        description: '스마트학습센터 페이지 설명',
+        period: '2025.06',
+        link: 'https://www.home-learn.co.kr/center.do',
+      },
+      {
+        name: '아이스크림에듀 소개',
+        description: '아이스크림에듀 소개 페이지 설명',
+        period: '2025.05',
+        link: 'https://www.i-screamedu.co.kr/front/about01.html',
+      },
+      {
+        name: '대표 인사말',
+        description: '대표 인사말 페이지 설명',
+        period: '2025.05',
+        link: 'https://www.i-screamedu.co.kr/front/about02.html',
+      },
+      {
+        name: '에듀테크',
+        description: '에듀테크 페이지 설명',
+        period: '2025.05',
+        link: 'https://www.i-screamedu.co.kr/front/business02.html',
+      },
+      {
+        name: '재무정보',
+        description: '재무정보 페이지 설명',
+        period: '2025.05',
+        link: 'https://www.i-screamedu.co.kr/front/ir02financial.html',
+      },
+      {
+        name: '성공사례',
+        description: '성공사례 페이지 설명',
+        period: '2025.05',
+        link: 'https://www.home-learn.co.kr/homelearn/news102/SuccessCase.html',
+      },
+      {
+        name: '성공팁',
+        description: '성공팁 페이지 설명',
+        period: '2025.05',
+        link: 'https://www.home-learn.co.kr/homelearn/news102/SuccessTips.html',
+      },
+    ],
+  },
+  {
+    category: '랜딩 페이지',
+    details: [
+      {
+        name: '겨울방학 잘 보내는 방법',
+        description: '겨울방학 잘 보내는 방법 페이지 설명',
+        period: '2024.10',
+        link: 'https://www.home-learn.co.kr/landing/ADLanding.do?lnd_no=3742',
+      },
+      {
+        name: '하반기 홈런 소개',
+        description: '하반기 홈런 소개 페이지 설명',
+        period: '2024.10',
+        link: 'https://www.home-learn.co.kr/front_html/iseCampaign.html',
+      },
+      {
+        name: 'AI 드림쌤 티징',
+        description: 'AI 드림쌤 티징 페이지 설명',
+        period: '2024.07',
+        link: 'https://www.home-learn.co.kr/front_html/AiDreamSSAM.html',
+      },
+      {
+        name: '여름방학 잘 보내는 방법',
+        description: '여름방학 잘 보내는 방법 페이지 설명',
+        period: '2024.07',
+        link: '',
+      },
+    ],
+  },
+  {
+    category: '기타',
   },
 ];
